@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hero Video Section</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+
+  height: 76px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* STICKY STATE */
+.navbar.is-sticky {
+  position: fixed;
+  background: rgba(0,0,0,0.75);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.nav-left { padding-left: 100px; }
+.logo { height: 60px; }
+
+.nav-center {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav-center a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 500;
+  padding: 4px 0;
+}
+
+.nav-center a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #fff;
+
+  transition: width 0.35s ease; /* 🔥 THIS WAS MISSING */
+}
+
+.nav-center a:hover::after {
+  width: 100%;
+}
+
+.nav-right { padding-right: 100px; }
+
+.connect-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+/* ---------------- HERO SECTION ---------------- */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Video inside hero */
+.hero video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark overlay */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 100px;
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  text-decoration: underline;
+}
+
+.hero p {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* ---------------- BELOW CONTENT ---------------- */
+.section {
+  padding: 100px;
+  background: #0c0c0c;
+}
+
+/* ---------------- MOBILE ---------------- */
+@media (max-width: 900px) {
+  .nav-left, .nav-right {
+    padding: 0 20px;
+  }
+
+  .nav-center {
+    display: none;
+  }
+
+  .hero-content {
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+}
+
+
+/* ---------- FOOTER ---------- */
+.footer {
+  background: #f7f4f2;
+  color: #0b0b0b;
+  padding: 60px 0 40px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+/* Footer Nav */
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.footer-nav a {
+  color: #2b2b2b;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: #000;
+}
+
+/* Social Icons */
+.footer-socials {
+  display: flex;
+  gap: 18px;
+}
+
+
+.footer-socials a {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.footer-socials a:hover {
+  background: rgba(0,0,0,0.05);
+  border-color: rgba(0,0,0,0.4);
+}
+
+.footer-socials svg {
+  width: 16px;
+  height: 16px;
+  fill: #2b2b2b;
+}
+
+/* Copyright */
+.footer-copy {
+  color: #555;
+  font-size: 13px;
+  opacity: 0.7;
+  text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer-inner {
+    padding: 0 20px;
+    gap: 24px;
+  }
+
+  .footer-nav {
+    gap: 16px;
+  }
+}
+
+/* ---------- LOGOS MARQUEE SECTION ---------- */
+.logos-marquee-section {
+  background: #ffffff;
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.logos-marquee {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Marquee container */
+.marquee__ctn {
+  display: flex;
+  width: fit-content;
+  will-change: transform;
+}
+
+/* Mask edges */
+.logos-marquee {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+/* Track */
+.marquee__track {
+  display: flex;
+}
+
+/* Logo item */
+.marquee__item {
+  flex-shrink: 0;
+  width: 140px;
+  margin-right: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marquee__item img {
+  height: 60px;
+  width: 100%;
+  object-fit: contain;
+  filter: brightness(100%);
+}
+
+/* Mobile tuning */
+@media (max-width: 768px) {
+  .marquee__item {
+    width: 110px;
+    margin-right: 2rem;
+  }
+
+  .marquee__item img {
+    height: 46px;
+  }
+}
+
+/* ---------- CONTACT SECTION ---------- */
+.contact-section {
+  background: #ffffff;
+  padding: 100px 100px;
+}
+
+.contact-header {
+  max-width: 720px;
+  margin: 0 auto 60px;   /* centers block */
+  text-align: center;   /* centers text */
+}
+
+.contact-header h2 {
+  font-size: 40px;
+  margin-bottom: 16px;
+  color: #111;
+}
+
+.contact-header p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* LEFT */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.contact-image {
+  max-width: 220px;
+  object-fit: contain;
+}
+
+.info-item strong {
+  display: block;
+  font-size: 14px;
+  color: #111;
+  margin-bottom: 6px;
+}
+
+.info-item a,
+.info-item p {
+  font-size: 15px;
+  color: #555;
+  text-decoration: none;
+}
+
+/* RIGHT FORM */
+.contact-form-wrapper {
+  background: #f7f4f2;
+  padding: 40px;
+  border-radius: 14px;
+}
+
+.contact-form {
+  display: grid;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #000;
+}
+
+/* Button */
+.submit-btn {
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  background: #111;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background: #000;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 900px) {
+  .contact-section {
+    padding: 80px 20px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .contact-header h2 {
+    font-size: 32px;
+  }
+
+  .contact-form-wrapper {
+    padding: 28px;
+  }
+}
+
+
+/* ---------- COUNTER STATISTICS SECTION ---------- */
+
+.stats-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 100px 20px;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 60px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.stat-box {
+  text-align: center;
+}
+
+.stat-box h2 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.stat-box p {
+  font-size: 16px;
+  color: #ccc;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+  }
+
+  .stat-box h2 {
+    font-size: 40px;
+  }
+}
+
+/* LIQUID EFFECT */
+
+.liquid-wrapper {
+  position: relative;
+  width: 100%;
+  height: 500px; /* or 100vh or any section height */
+  overflow: hidden;
+}
+
+#canvas {
+  position: absolute; /* NOT fixed */
+  inset: 0;
+}
+
+</style>
+</head>
+
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+  
+    <!-- VIDEO -->
+    <video autoplay muted loop playsinline>
+      <source src="https://cdn.dorik.com/65b8a0980c950f00116993f2/videos/production_id_3775278-(1080p)-F1ECI.mp4" type="video/mp4">
+    </video>
+  
+    <!-- DARK OVERLAY -->
+    <div class="hero-overlay"></div>
+  
+    <!-- NAVBAR INSIDE HERO -->
+    <nav class="navbar">
+      <div class="nav-left">
+        <img src="calvaith-logo.png" class="logo" alt="Calvaith">
+      </div>
+  
+      <div class="nav-center">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Industries</a>
+        <a href="#">What We Do</a>
+        <a href="#">Explore IT & Digital Solutions</a>
+      </div>
+  
+      <div class="nav-right">
+        <button class="connect-btn">Connect</button>
+      </div>
+    </nav>
+  
+    <!-- HERO TEXT -->
+    <div class="hero-content">
+      <h1 style="font-family: 'ivypresto-headline', serif;">
+        Your Trusted <span>FMCG</span><br />
+        Sourcing Partner
+      </h1>
+      <p>
+        Transforming global supply chains with cutting-edge FMCG sourcing strategies,
+        operational excellence, and strategic consulting that turns complex challenges
+        into seamless business opportunities worldwide.
+      </p>
+    </div>
+  
+  </section>
+
+  <!-- COUNTER S?TATISTICS SECTION -->
+
+<section class="stats-wrapper" style="background-color:black">
+  <div class="stats-container" id="stats" style="background-color:black">
+    
+    <div class="stat-box">
+      <h2 class="counter" data-target="92" data-suffix="%">0%</h2>
+      <p>Partners Success Rate</p>
+    </div>
+
+    <div class="stat-box">
+      <h2 class="counter" data-target="50" data-suffix="+">0+</h2>
+      <p>Global Markets Covered</p>
+    </div>
+
+    <div class="stat-box">
+      <h2 class="counter" data-target="7" data-suffix="M+">0M+</h2>
+      <p>Annual Transaction Value</p>
+    </div>
+
+    <div class="stat-box">
+      <h2 class="counter" data-target="15">0</h2>
+      <p>Years of Experience</p>
+    </div>
+
+  </div>
+</section>
+
+ 
+
+  <!-- LOGOS MARQUEE SECTION -->
+<section class="logos-marquee-section">
+  <div class="logos-marquee">
+    <div class="marquee__ctn" data-speed="80">
+
+      <div class="marquee__track">
+        <div class="marquee__item"><img src="https://cdn.prod.website-files.com/61ed56ae9da9fd7e0ef0a967/6560a0eeeb860f66063130cc_Amsterdam-colored.svg" alt=""></div>
+        <div class="marquee__item"><img src="https://cdn.prod.website-files.com/61ed56ae9da9fd7e0ef0a967/6560a09591135411dbf1f686_colorado-colored.svg" alt=""></div>
+        <div class="marquee__item"><img src="https://cdn.prod.website-files.com/61ed56ae9da9fd7e0ef0a967/65609f775edfd6ba4a3c3af7_Nairobi-colored.svg" alt=""></div>
+        <div class="marquee__item"><img src="https://cdn.prod.website-files.com/61ed56ae9da9fd7e0ef0a967/656093f6591bba4a6757b985_Hudon-colored.svg" alt=""></div>
+        <div class="marquee__item"><img src="https://cdn.prod.website-files.com/61ed56ae9da9fd7e0ef0a967/6560817610fbd2b58993793c_Aura-colored.svg" alt=""></div>
+        <div class="marquee__item"><img src="https://cdn.prod.website-files.com/61ed56ae9da9fd7e0ef0a967/65607df9d46a61fcef7c719f_Aiken-colored.svg" alt=""></div>
+      </div>
+
+      <!-- duplicate for seamless loop -->
+      <div class="marquee__track" aria-hidden="true">
+        <div class="marquee__item"><img src="https://cdn.prod.website-files.com/61ed56ae9da9fd7e0ef0a967/6560a0eeeb860f66063130cc_Amsterdam-colored.svg" alt=""></div>
+        <div class="marquee__item"><img src="https://cdn.prod.website-files.com/61ed56ae9da9fd7e0ef0a967/6560a09591135411dbf1f686_colorado-colored.svg" alt=""></div>
+        <div class="marquee__item"><img src="https://cdn.prod.website-files.com/61ed56ae9da9fd7e0ef0a967/65609f775edfd6ba4a3c3af7_Nairobi-colored.svg" alt=""></div>
+        <div class="marquee__item"><img src="https://cdn.prod.website-files.com/61ed56ae9da9fd7e0ef0a967/656093f6591bba4a6757b985_Hudon-colored.svg" alt=""></div>
+        <div class="marquee__item"><img src="https://cdn.prod.website-files.com/61ed56ae9da9fd7e0ef0a967/6560817610fbd2b58993793c_Aura-colored.svg" alt=""></div>
+        <div class="marquee__item"><img src="https://cdn.prod.website-files.com/61ed56ae9da9fd7e0ef0a967/65607df9d46a61fcef7c719f_Aiken-colored.svg" alt=""></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- CONTACT US SECTION -->
+<section class="contact-section">
+
+  <!-- Heading -->
+  <div class="contact-header">
+    <h2>Contact Us</h2>
+    <p>
+      Let us know your requirements and our team will get back to you with
+      tailored solutions that match your business needs.
+    </p>
+  </div>
+
+  <!-- Content Grid -->
+  <div class="contact-grid">
+
+    <!-- LEFT: COMPANY DETAILS -->
+    <div class="contact-info">
+      <img src="calvaith-logo.png" alt="Company" class="contact-image">
+
+      <div class="info-item">
+        <strong>Email</strong>
+        <a href="mailto:info@calvaith.com">info@calvaith.com</a>
+      </div>
+
+      <div class="info-item">
+        <strong>Phone</strong>
+        <a href="tel:+911234567890">+91 12345 67890</a>
+      </div>
+
+      <div class="info-item">
+        <strong>Address</strong>
+        <p>
+          Calvaith International<br>
+          Global Business Park,<br>
+          India
+        </p>
+      </div>
+    </div>
+
+    <!-- RIGHT: FORM -->
+    <div class="contact-form-wrapper">
+      <form class="contact-form">
+
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" required>
+        </div>
+
+        <div class="form-group">
+          <label>Company</label>
+          <input type="text">
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" required>
+        </div>
+
+        <div class="form-group">
+          <label>Phone (optional)</label>
+          <input type="tel">
+        </div>
+
+        <div class="form-group">
+          <label>Type of Service Needed</label>
+          <select required>
+            <option value="">Select a service</option>
+            <option>IT Consulting</option>
+            <option>Digital Transformation</option>
+            <option>Software Development</option>
+            <option>Managed Services</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Short Description of Requirement</label>
+          <textarea rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Request</button>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<div class="liquid-wrapper">
+  <canvas id="canvas"></canvas>
+</div>
+
+
+  <!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+
+    <!-- Footer Navigation -->
+    <nav class="footer-nav">
+      <a href="#">About Us</a>
+      <a href="#">What We Deliver</a>
+      <a href="#">How We Work</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy Policy / Terms</a>
+    </nav>
+
+    <!-- Social Icons -->
+    <div class="footer-socials">
+      <a href="#" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24">
+          <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4zM8.5 8h3.8v2.2h.05c.53-1 1.85-2.2 3.8-2.2 4.05 0 4.8 2.67 4.8 6.14V24h-4v-8.5c0-2.03-.04-4.64-2.83-4.64-2.83 0-3.26 2.21-3.26 4.49V24h-4z"/>
+        </svg>
+      </a>
+
+      <a href="#" aria-label="Twitter">
+        <svg viewBox="0 0 24 24">
+          <path d="M24 4.56c-.88.39-1.83.65-2.82.77a4.92 4.92 0 002.15-2.72 9.87 9.87 0 01-3.12 1.2A4.92 4.92 0 0016.62 3c-2.72 0-4.92 2.2-4.92 4.92 0 .38.04.76.12 1.12-4.09-.2-7.72-2.16-10.15-5.14a4.93 4.93 0 00-.67 2.48c0 1.7.86 3.2 2.17 4.08a4.9 4.9 0 01-2.23-.62v.06c0 2.38 1.69 4.36 3.94 4.8a4.9 4.9 0 01-2.22.08c.63 1.96 2.44 3.38 4.59 3.42A9.88 9.88 0 010 20.29a13.94 13.94 0 007.55 2.21c9.05 0 14-7.5 14-14 0-.21 0-.42-.02-.63A9.94 9.94 0 0024 4.56z"/>
+        </svg>
+      </a>
+
+      <a href="#" aria-label="Facebook">
+        <svg viewBox="0 0 24 24">
+          <path d="M22.68 0H1.32C.59 0 0 .59 0 1.32v21.36C0 23.41.59 24 1.32 24H12.8v-9.29H9.69v-3.62h3.11V8.41c0-3.07 1.87-4.74 4.6-4.74 1.31 0 2.44.1 2.77.14v3.2h-1.9c-1.49 0-1.78.71-1.78 1.75v2.29h3.56l-.46 3.62h-3.1V24h6.08c.73 0 1.32-.59 1.32-1.32V1.32C24 .59 23.41 0 22.68 0z"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copy">
+      © <span id="year"></span> Calvaith International. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+
+
+<script>
+  const navbar = document.querySelector(".navbar");
+  const hero = document.querySelector(".hero");
+  
+  window.addEventListener("scroll", () => {
+    const triggerPoint = hero.offsetHeight - navbar.offsetHeight;
+  
+    if (window.scrollY > triggerPoint) {
+      navbar.classList.add("is-sticky");
+    } else {
+      navbar.classList.remove("is-sticky");
+    }
+  });
+  </script>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<script>
+  class LogosMarquee {
+    constructor({ container, speed = 80 }) {
+      this.container = document.querySelector(container);
+      this.speed = speed;
+  
+      if (!this.container) return;
+  
+      this.track = this.container.querySelector(".marquee__track");
+      this.trackWidth = this.track.offsetWidth;
+      this.pos = 0;
+      this.lastTime = null;
+  
+      this.cloneTrack();
+      requestAnimationFrame(this.animate.bind(this));
+    }
+  
+    cloneTrack() {
+      const clone = this.track.cloneNode(true);
+      this.container.appendChild(clone);
+    }
+  
+    animate(time) {
+      if (!this.lastTime) this.lastTime = time;
+      const delta = (time - this.lastTime) / 1000;
+      this.pos -= this.speed * delta;
+  
+      if (Math.abs(this.pos) >= this.trackWidth) {
+        this.pos = 0;
+      }
+  
+      this.container.style.transform = `translateX(${this.pos}px)`;
+      this.lastTime = time;
+      requestAnimationFrame(this.animate.bind(this));
+    }
+  }
+  
+  window.addEventListener("load", () => {
+    new LogosMarquee({
+      container: ".marquee__ctn",
+      speed: 80
+    });
+  });
+  </script>
+
+<script>
+  document.querySelector(".contact-form").addEventListener("submit", e => {
+    e.preventDefault();
+    alert("Thank you! We will contact you shortly.");
+  });
+  </script>
+  
+
+  <!-- counter script  -->
+  <script>
+
+
+const counters = document.querySelectorAll(".counter");
+
+function animateCounter(counter) {
+  const target = +counter.dataset.target;
+  const suffix = counter.dataset.suffix || "";
+  const duration = 900; // animation duration (ms)
+  const startTime = performance.now();
+
+  function update(currentTime) {
+    const progress = Math.min((currentTime - startTime) / duration, 1);
+    const value = Math.floor(progress * target);
+    counter.innerText = value + suffix;
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    } else {
+      counter.innerText = target + suffix;
+    }
+  }
+
+  requestAnimationFrame(update);
+}
+
+function resetCounters() {
+  counters.forEach(counter => {
+    counter.innerText = "0" + (counter.dataset.suffix || "");
+  });
+}
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        counters.forEach(counter => animateCounter(counter));
+      } else {
+        resetCounters();
+      }
+    });
+  },
+  {
+    threshold: 0.5 // trigger when 50% visible
+  }
+);
+
+observer.observe(document.getElementById("stats"));
+
+
+</script>
+<!-- 
+liquid effect -->
+
+<script type="module">
+// Licence CC BY-NC-SA 4.0
+// Attribution — You must give appropriate credit.
+// Non Commercial — You may not use the material for commercial purposes.
+
+import LiquidBackground from 'https://cdn.jsdelivr.net/npm/threejs-components@0.0.27/build/backgrounds/liquid1.min.js'
+
+const app = LiquidBackground(document.getElementById('canvas'))
+
+app.loadImage('https://assets.codepen.io/33787/liquid.webp')
+// app.loadImage('calvaith-liquid.png')
+app.liquidPlane.material.metalness = 0.75
+app.liquidPlane.material.roughness = 0.25
+app.liquidPlane.uniforms.displacementScale.value = 5
+app.setRain(false)
+
+
+</script>
+  
+  </body>
+  
+  
+</html>
