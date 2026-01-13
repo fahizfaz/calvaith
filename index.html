@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
 	<title>Calvaith International</title>
 
 	<!-- Favicon -->
@@ -13,6 +12,8 @@
 
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 	<!-- SEO Meta -->
 	<meta name="description" content="Calvaith International provides innovative IT and digital solutions across industries, helping businesses grow with technology-driven strategies.">
@@ -228,11 +229,13 @@
         font-size: 30px;
         line-height: 1.2em;
         font-style: normal;
+		
 
     }
 
     .hero-content h1 span {
       color: #aa8e31;
+
     }
 
     .hero-content p {
@@ -240,6 +243,7 @@
       font-size: 16px;
       line-height: 1.7;
       opacity: 0.95;
+	  text-align: justify;
     }
 
     @media (max-width: 768px) {
@@ -256,10 +260,12 @@
 
 		.hero-content h1 {
 		font-size: 34px;
+		text-align: justify;
 		}
 
 		.hero-content p {
 		font-size: 15px;
+		text-align: justify;
 		}
   	}
 
@@ -277,6 +283,7 @@
 		font-size: 16px;
 		margin-bottom: 28px;
 		font-family: 'Source Sans Pro', sans-serif;
+		text-align: justify;
 	}
 
 	.text-content-section .highlight {
@@ -492,7 +499,7 @@
 .text-block p {
   font-size: 16px;
   color: #666;
-  max-width: 80%;
+  text-align: justify;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -548,6 +555,7 @@
 .overlay p {
   font-size: 14px;
   font-family: 'Source Sans Pro', sans-serif;
+  text-align: justify;
 }
 
 .overlay li {
@@ -761,7 +769,7 @@
 	  
 		  	<!-- Image Column -->
 			<div class="image-card">
-				<img src="property-cover-1.jpg" alt="Residential Homes">
+				<img src="property-cover-11.jpg" alt="Residential Homes">
 				<div class="overlay">
 				<h3>Consumer Goods & FMCG</h3>
 					<p>We support brands, retailers, and distributors in the fast-moving consumer goods sector by 
@@ -783,7 +791,7 @@
 			</div>
 
 			<div class="image-card">
-				<img src="property-cover-2.jpg" alt="Apartments">
+				<img src="property-cover-22.jpg" alt="Apartments">
 				<div class="overlay">
 					<h3>Industrial Materials &amp; Metals</h3>
 					<p>
@@ -812,7 +820,7 @@
 		<div class="grid grid-3">
 
 		  	<div class="image-card">
-				<img src="property-cover-3.jpg" alt="Office">
+				<img src="property-cover-33.jpg" alt="Office">
 				<div class="overlay">
 					<h3>Sports, Fitness &amp; Recreational Equipment</h3>
 					<p>
@@ -836,7 +844,7 @@
 		  	</div>
 
 			  <div class="image-card">
-				<img src="property-cover-4.jpg" alt="Villa">
+				<img src="property-cover-44.jpg" alt="Villa">
 				<div class="overlay">
 			<h3>Construction, Infrastructure &amp; Outdoor Solutions</h3>
 			<p>
@@ -860,7 +868,7 @@
 			  </div>
 		  
 			  <div class="image-card">
-				<img src="property-cover-5.jpg" alt="Commercial">
+				<img src="property-cover-55.jpg" alt="Commercial">
 				<div class="overlay">
 				  <h3>Custom &amp; Multi-Industry Business Solutions</h3>
 			<p>
@@ -1065,6 +1073,28 @@
     window.addEventListener("resize", () => (index = 0));
   </script>
 
+<script>
+	let currentScroll = 0;
+	let targetScroll = 0;
+	let ease = 0.08;
+	
+	window.addEventListener('wheel', (e) => {
+	  e.preventDefault();
+	  targetScroll += e.deltaY;
+	  targetScroll = Math.max(
+		0,
+		Math.min(targetScroll, document.body.scrollHeight - window.innerHeight)
+	  );
+	}, { passive: false });
+	
+	function smoothScroll() {
+	  currentScroll += (targetScroll - currentScroll) * ease;
+	  window.scrollTo(0, currentScroll);
+	  requestAnimationFrame(smoothScroll);
+	}
+	
+	smoothScroll();
+	</script>
+
 </body>
 </html>
-
