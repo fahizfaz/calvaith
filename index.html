@@ -3,18 +3,13 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-
 	<title>Calvaith International</title>
-
 	<!-- Favicon -->
 	<link rel="icon" type="image/svg+xml" href="favicon.svg">
-
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
 	<!-- SEO Meta -->
 	<meta name="description" content="Calvaith International provides innovative IT and digital solutions across industries, helping businesses grow with technology-driven strategies.">
 	<meta name="robots" content="index, follow">
@@ -23,1088 +18,1754 @@
 
 	<style>
 
-    @font-face {
-        font-family: 'IvyPrestoHeadline';
-        src: url('./fonts/ivypresto-headline-light.otf') format('opentype');
-        font-weight: 300; /* Light */
-        font-style: normal;
-        font-display: swap;
-    }
-
-    * {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-		font-family: Arial, Helvetica, sans-serif;
-    }
-
-    body {
-		background-color: #f7f4f2;
-		/* min-height: 200vh; */
-		/* Just to show sticky effect */
-		font-family: 'IvyPrestoHeadline', Georgia, serif;
-    }
-
-	.home-container{
-		padding: 0 50px;
-	}
-
-    /* ///////     MENU     /////// */
-
-    /* NAVBAR */
-    .navbar {
-		position: sticky;
-		top: 0;
-		width: 100%;
-		background: #f7f4f2;
-		backdrop-filter: blur(10px);
-		z-index: 1000;
-		font-family: 'Source Sans Pro', sans-serif;
-		text-transform: uppercase;
-		font-weight: 400px;
-		letter-spacing: .1em;
-		font-size: 14px;
-		font-style: normal;
-    }
-
-    .navbar-container {
-		max-width: 1200px;
-		margin: auto;
-		padding: 16px 20px;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-    }
-
-    /* LOGO */
-
-    .logo {
-		height: 60px;
-		width: auto;
-		object-fit: contain;
-		display: block;
-    }
-
-    /* MENU */
-    .menu {
-		display: flex;
-		gap: 28px;
-		list-style: none;
-    }
-
-    .menu li a {
-      color: #000;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 400px;
-      transition: opacity 0.3s ease;
-      font-family: 'Source Sans Pro', sans-serif;
-      letter-spacing: 0.3px;
-    }
-
-    .menu li a:hover {
-      opacity: 0.4;
-    }
-
-    /* CONNECT BUTTON */
-    .connect-btn {
-      padding: 10px 20px;
-      border: 1.5px solid #000;
-      border-radius: 6px;
-      color: #000;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .connect-btn:hover {
-      opacity: 0.4;
-    }
-
-    /* Hamburger base */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 6px;
-    }
-
-    .hamburger span {
-      width: 26px;
-      height: 3px;
-      background: #aa8e31; /* YOUR COLOR */
-      border-radius: 2px;
-      transition: all 0.35s ease;
-    }
-
-    /* OPEN STATE → CLOSE ICON */
-    .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
-    }
-
-    /* MOBILE MENU */
-    @media (max-width: 768px) {
-      .menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #f7f4f2;
-        flex-direction: column;
-        align-items: center;
-        gap: 18px;
-        padding: 20px 0;
-        display: none;
-      }
-
-      .menu.active {
-        display: flex;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-    }
-
-	/* ///////     VIDEO SECTION     /////// */
-
-    /* HERO SECTION */
-    .hero-section {
-      background: #f7f4f2;
-    }
-
-    .hero-wrapper {
-      position: relative;
-      /* max-width: 1200px; */
-      margin: 0 auto;
-      border-radius: 24px;
-      overflow: hidden;
-      height: 520px;
-      background: #000;
-    }
-
-    /* Video */
-    .hero-wrapper video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Dark overlay for text readability */
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.55),
-        rgba(0, 0, 0, 0.25)
-      );
-      z-index: 1;
-    }
-
-    /* Hero Text */
-    .hero-content {
-      position: absolute;
-      top: 50%;
-      left: 60px;
-      transform: translateY(-50%);
-      max-width: 520px;
-      color: #fff;
-      z-index: 2;
-    }
-
-    .hero-content h1 {
-        font-family: 'ivypresto-headline';
-        margin-bottom: 20px;
-        text-transform: none;
-        font-weight: 300;
-        letter-spacing: .06em;
-        font-size: 30px;
-        line-height: 1.2em;
-        font-style: normal;
-		
-
-    }
-
-    .hero-content h1 span {
-      color: #aa8e31;
-
-    }
-
-    .hero-content p {
-      font-family: 'Source Sans Pro', sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      opacity: 0.95;
-	  text-align: justify;
-    }
-
-    @media (max-width: 768px) {
-		.hero-wrapper {
-		height: 420px;
-		border-radius: 18px;
+		@font-face {
+			font-family: 'IvyPrestoHeadline';
+			src: url('./fonts/ivypresto-headline-light.otf') format('opentype');
+			font-weight: 300; /* Light */
+			font-style: normal;
+			font-display: swap;
 		}
 
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		:root {
+			--c1: #e4cfb9;
+			--c2: #feba88;
+			--c3: #d9dbdf;
+			--c4: #97c680;
+			--c5: #bae1ff;
+		}
+
+		body {
+			background-color: #f7f4f2;
+			font-family: 'IvyPrestoHeadline', Georgia, serif;
+		}
+
+		.home-container{
+			padding: 0 50px;
+		}
+
+		/* ///////     MENU     /////// */
+
+		/* NAVBAR */
+		.navbar {
+			position: sticky;
+			top: 0;
+			width: 100%;
+			background: #f7f4f2;
+			backdrop-filter: blur(10px);
+			z-index: 1000;
+			font-family: 'Source Sans Pro', sans-serif;
+			text-transform: uppercase;
+			font-weight: 400px;
+			letter-spacing: .1em;
+			font-size: 14px;
+			font-style: normal;
+		}
+
+		.navbar-container {
+			max-width: 1200px;
+			margin: auto;
+			padding: 16px 20px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		/* LOGO */
+
+		.logo {
+			height: 60px;
+			width: auto;
+			object-fit: contain;
+			display: block;
+		}
+
+		/* MENU */
+		.menu {
+			display: flex;
+			gap: 28px;
+			list-style: none;
+		}
+
+		.menu li a {
+		color: #000;
+		text-decoration: none;
+		font-size: 14px;
+		font-weight: 400px;
+		transition: opacity 0.3s ease;
+		font-family: 'Source Sans Pro', sans-serif;
+		letter-spacing: 0.3px;
+		}
+
+		.menu li a:hover {
+			/* opacity: 0.4; */
+			color: #aa8e31;
+		}
+
+		/* CONNECT BUTTON */
+		.connect-btn {
+		padding: 10px 20px;
+		border: 1.5px solid #000;
+		border-radius: 6px;
+		color: #000;
+		text-decoration: none;
+		transition: all 0.3s ease;
+		}
+
+		.connect-btn:hover {
+			opacity: 0.4;
+		}
+
+		/* Hamburger base */
+		.hamburger {
+		display: none;
+		flex-direction: column;
+		cursor: pointer;
+		gap: 6px;
+		}
+
+		.hamburger span {
+		width: 26px;
+		height: 3px;
+		background: #aa8e31; /* YOUR COLOR */
+		border-radius: 2px;
+		transition: all 0.35s ease;
+		}
+
+		/* OPEN STATE → CLOSE ICON */
+		.hamburger.active span:nth-child(1) {
+		transform: rotate(45deg) translate(5px, 5px);
+		}
+
+		.hamburger.active span:nth-child(2) {
+		opacity: 0;
+		}
+
+		.hamburger.active span:nth-child(3) {
+		transform: rotate(-45deg) translate(6px, -6px);
+		}
+
+		/* MOBILE MENU */
+		@media (max-width: 768px) {
+		.menu {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 100%;
+			background: #f7f4f2;
+			flex-direction: column;
+			align-items: center;
+			gap: 18px;
+			padding: 20px 0;
+			display: none;
+		}
+
+		.menu.active {
+			display: flex;
+		}
+
+		.hamburger {
+			display: flex;
+		}
+		}
+
+		/* ///////     VIDEO SECTION     /////// */
+
+		/* HERO SECTION */
+		.hero-section {
+		background: #f7f4f2;
+		}
+
+		.hero-wrapper {
+		position: relative;
+		/* max-width: 1200px; */
+		margin: 0 auto;
+		border-radius: 24px;
+		overflow: hidden;
+		height: 520px;
+		background: #000;
+		}
+
+		/* Video */
+		.hero-wrapper video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		}
+
+		/* Dark overlay for text readability */
+		.hero-overlay {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(
+			to right,
+			rgba(0, 0, 0, 0.55),
+			rgba(0, 0, 0, 0.25)
+		);
+		z-index: 1;
+		}
+
+		/* Hero Text */
 		.hero-content {
-		left: 24px;
-		right: 24px;
-		max-width: 100%;
+		position: absolute;
+		top: 50%;
+		left: 60px;
+		transform: translateY(-50%);
+		max-width: 520px;
+		color: #fff;
+		z-index: 2;
 		}
 
 		.hero-content h1 {
-		font-size: 34px;
-		text-align: justify;
+			font-family: 'ivypresto-headline';
+			margin-bottom: 20px;
+			text-transform: none;
+			font-weight: 300;
+			letter-spacing: .06em;
+			font-size: 30px;
+			line-height: 1.2em;
+			font-style: normal;
+			
+
+		}
+
+		.hero-content h1 span {
+		color: #aa8e31;
+
 		}
 
 		.hero-content p {
-		font-size: 15px;
+		font-family: 'Source Sans Pro', sans-serif;
+		font-size: 16px;
+		line-height: 1.7;
+		opacity: 0.95;
 		text-align: justify;
 		}
-  	}
 
-	/* ///////     TEXT CONTENT     /////// */
-	.text-content-section {
-		background-color: #f7f4f2;
-		color: #020202;
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 50px;
-		line-height: 1.7;
-	}
+		@media (max-width: 768px) {
+			.hero-wrapper {
+			height: 420px;
+			border-radius: 18px;
+			}
 
-	.text-content-section p {
-		font-size: 16px;
-		margin-bottom: 28px;
-		font-family: 'Source Sans Pro', sans-serif;
-		text-align: justify;
-	}
+			.hero-content {
+			left: 24px;
+			right: 24px;
+			max-width: 100%;
+			}
 
-	.text-content-section .highlight {
-		color: #aa8e31;
-	}
+			.hero-content h1 {
+			font-size: 20px;
+			text-align: center;
+			}
 
-	@media (max-width: 768px) {
+			.hero-content p {
+			font-size: 15px;
+			text-align: justify;
+			}
+		}
+
+		/* ///////////// GALLERY SECTION //////////////*/
+
+		.gallery-section {
+		max-width: 1400px;
+		margin: auto;
+		padding: 80px 20px;
+		}
+
+		.gallery-section h2 {
+			text-align: center;
+			font-size: 42px;
+			font-family: 'ivypresto-headline';
+			margin-bottom: 18px;
+			text-transform: none;
+			font-weight: 300;
+			letter-spacing: .06em;
+			line-height: 1.2em;
+			font-style: normal;
+			color: #1e1e2f;
+		}
+
+		/* MASONRY LAYOUT */
+		.masonry {
+		column-count: 5;          /* desktop like your image */
+		column-gap: 20px;
+		}
+
+		/* IMAGE */
+		.masonry img {
+		width: 100%;
+		display: block;
+		margin-bottom: 20px;
+		border-radius: 14px;
+		break-inside: avoid;
+		filter: grayscale(100%);
+		transition: filter 0.4s ease, transform 0.4s ease;
+		}
+
+		/* HOVER EFFECT */
+		.masonry img:hover {
+		filter: grayscale(0%);
+		transform: scale(1.02);
+		}
+
+		/* RESPONSIVE BREAKPOINTS */
+		@media (max-width: 1200px) {
+		.masonry {
+			column-count: 4;
+		}
+		}
+
+		@media (max-width: 900px) {
+		.masonry {
+			column-count: 3;
+		}
+		}
+
+		@media (max-width: 600px) {
+		.masonry {
+			column-count: 2;
+		}
+		}
+
+		@media (max-width: 400px) {
+		.masonry {
+			column-count: 1;
+		}
+		}
+
+		
+		/* LIGHTBOX */
+		.lightbox {
+		position: fixed;
+		inset: 0;
+		background: rgba(0,0,0,0.85);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.3s ease;
+		z-index: 1000;
+		}
+
+		.lightbox.active {
+		opacity: 1;
+		pointer-events: all;
+		}
+
+		.lightbox-img {
+		max-width: 90%;
+		max-height: 90%;
+		border-radius: 10px;
+		box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+		}
+
+		/* CLOSE BUTTON */
+		.lightbox .close {
+		position: absolute;
+		top: 30px;
+		right: 40px;
+		font-size: 40px;
+		color: #fff;
+		cursor: pointer;
+		}
+
+		/* ///////     TEXT CONTENT     /////// */
+
 		.text-content-section {
-			padding: 48px 20px;
+			background-color: #f7f4f2;
+			color: #020202;
+			max-width: 1300px;
+			margin: 0 auto;
+			padding: 150px 0px;
+			line-height: 1.7;
 		}
 
 		.text-content-section p {
 			font-size: 16px;
+			margin-bottom: 28px;
+			font-family: 'Source Sans Pro', sans-serif;
+			text-align: justify;
+		}
+
+		.drop-cap::first-letter {
+			font-family: "Bradley Hand ITC", "Source Sans Pro", "Comic Sans MS", cursive;
+			font-size: 3.5rem;
+			font-weight: 600;
+			float: left;
+			line-height: 0.6;
+			margin-right: 8px;
+			margin-top: 4px;
+			color: #aa8e31;
+		}
+
+		.text-content-section .highlight {
+			color: #aa8e31;
+		}
+
+		@media (max-width: 768px) {
+			.text-content-section {
+				padding: 48px 20px;
+			}
+
+			.text-content-section p {
+				font-size: 16px;
+				margin-bottom: 20px;
+			}
+		}
+
+		/* ///////     INDUSTRY SECTION     /////// */
+
+		.industry-section {
+			/* margin: 0 auto;
+			padding: 80px 24px; */
+		}
+
+		.grid {
+			display: grid;
+			gap: 24px;
+			margin-bottom: 32px;
+		}
+
+		.grid-3 {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		.text-block {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		.text-block h2 {
+			font-size: 40px;
+			margin-bottom: 16px;
+			color: #111;
+			font-family: 'ivypresto-headline';
+			font-weight: 500;
+			letter-spacing: .06em;
+			line-height: 1.2em;
+			font-style: normal;
+		}
+
+		.text-block p {
+			font-size: 16px;
+			color: #666;
+			text-align: justify;
+			font-family: 'Source Sans Pro', sans-serif;
+		}
+
+		
+
+		.image-card {
+			position: relative;
+			overflow: hidden;
+			border-radius: 20px;
+			height: 330px;
+		}
+
+		.image-card img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
+
+		.overlay {
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(
+				to top,
+				rgba(0, 0, 0, 0.85),
+				rgba(0, 0, 0, 0.4)
+			);
+			color: #fff;
+			padding: 24px;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			transform: translateY(100%);
+			transition: transform 0.4s ease;
+			overflow-y: auto;
+		}
+
+		.image-card:hover .overlay {
+			transform: translateY(0);
+		}
+
+		.overlay h3 {
+			font-size: 22px;
+			margin-bottom: 8px;
+			font-family: 'ivypresto-headline';
+			font-weight: 300;
+			letter-spacing: .06em;
+			line-height: 1.2em;
+			font-style: normal;
+
+		}
+
+		.overlay p {
+			font-size: 14px;
+			font-family: 'Source Sans Pro', sans-serif;
+			text-align: justify;
+		}
+
+		.overlay li {
+			font-size: 14px;
+			font-family: 'Source Sans Pro', sans-serif;
+		}
+
+		@media (max-width: 768px) {
+			.grid-3 {
+				grid-template-columns: 1fr;
+			}
+
+			.text-block h2 {
+				font-size: 28px;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+		}
+
+		/* ///////     WHAT WE DO SECTION     /////// */
+
+		.what-we-do-section {
+			margin: 150px 0px;
+			text-align: center;
+		}
+
+		.what-we-do-section h2 {
+			font-size: 42px;
+			font-family: 'ivypresto-headline';
 			margin-bottom: 20px;
+			text-transform: none;
+			font-weight: 300;
+			letter-spacing: .06em;
+			line-height: 1.2em;
+			font-style: normal;
+			color: #1e1e2f;
 		}
-	}
 
-	/* ///////     FOOTER SECTION     /////// */
+		.what-we-do-section p {
+			font-size: 18px;
+			margin-bottom: 50px;
+			font-family: 'Source Sans Pro', sans-serif;
+		}
 
-	.site-footer {
-		background: #f7f4f2;
-		margin-top: 0;
-	}
+		.slider-wrapper {
+			overflow: hidden;
+			width: 100%;
+		}
 
-	.footer-wrapper {
-		position: relative;
-		min-height: 600px;
-		padding-top: 80px;
-		overflow: hidden;
-		color: #fff;
-	}
+		.slider-track {
+			display: flex;
+			transition: transform 0.6s ease-in-out;
+		}
 
-	.footer-bg {
-		position: absolute;
-		inset: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center top;
-		z-index: 0;
-	}
+		.card {
+			flex: 0 0 33.3333%;
+			padding: 15px;
+		}
 
-	.footer-overlay {
-		position: absolute;
-		inset: 0;
-		z-index: 1;
-		background: linear-gradient(
-			to bottom,
-			#f7f4f2 0%,
-			rgba(247, 244, 242, 0.85) 12%,
-			rgba(247, 244, 242, 0.45) 28%,
-			rgba(0, 0, 0, 0.25) 55%,
-			rgba(0, 0, 0, 0.55) 100%
-		);
-	}
+		.card:nth-child(5n + 1) .card-inner {
+			background-color: var(--c1);
+		}
 
-	/* Main Content */
-	.footer-content {
-		position: relative;
-		z-index: 2;
-		display: grid;
-		grid-template-columns: 1fr 1px 1fr;
-		gap: 60px;
-		padding: 60px;
-	}
+		.card:nth-child(5n + 2) .card-inner {
+			background-color: var(--c2);
+		}
 
-  	/* LEFT */
-	.footer-left h2 {
-		font-family: 'ivypresto-headline', serif;
-		font-size: 40px;
-		margin-bottom: 16px;
-	}
+		.card:nth-child(5n + 3) .card-inner {
+			background-color: var(--c3);
+		}
 
-	.footer-left p {
-		font-family: 'Source Sans Pro', sans-serif;
-		font-size: 15px;
-		line-height: 1.7;
-		margin-bottom: 26px;
-		opacity: 0.9;
-	}
+		.card:nth-child(5n + 4) .card-inner {
+			background-color: var(--c4);
+		}
 
-	/* Button */
-	.footer-btn {
-		display: inline-block;
-		padding: 12px 26px;
-		background: #fff;
-		color: #1b3a2a;
-		font-weight: 600;
-		border-radius: 8px;
-		text-decoration: none;
-		margin-bottom: 22px;
-		transition: transform 0.3s ease;
-	}
+		.card:nth-child(5n + 5) .card-inner {
+			background-color: var(--c5);
+		}
 
-	.footer-btn:hover {
-		transform: translateY(-2px);
-	}
+		.card-inner {
+			background: var(--card-bg);
+			border-radius: 20px;
+			padding: 40px 25px;
+			height: 100%;
+			box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+			transition: transform 0.3s ease;
+			background-image: linear-gradient(
+				to bottom right,
+				rgba(255,255,255,0.4),
+				rgba(255,255,255,0)
+			);
+		}
 
-	/* WhatsApp */
-	.footer-whatsapp span {
-		display: block;
-		margin-bottom: 6px;
-		opacity: 0.9;
-	}
+		.card-inner:hover {
+			transform: translateY(-6px);
+		}
 
-	.whatsapp-number {
-		font-size: 16px;
-		font-weight: 600;
-	}
+		.card h3 {
+			font-size: 22px;
+			margin-bottom: 12px;
+			font-family: 'ivypresto-headline';
+			text-transform: none;
+			font-weight: 500;
+			line-height: 1.2em;
+			font-style: normal;
+		}
 
-	/* Divider */
-	.footer-divider {
-		width: 1px;
-		background: rgba(255, 255, 255, 0.25);
-	}
+		.card p {
+			font-size: 15px;
+			color: var(--muted);
+			line-height: 1.6;
+			margin: 0;
+			text-align:justify;
+		}
 
-	/* RIGHT */
-	.footer-right h3 {
-		font-family: 'ivypresto-headline', serif;
-		font-size: 26px;
-		margin-bottom: 20px;
-	}
+		.icon {
+			width: 120px;
+			height: 120px;
+			margin: 0 auto 22px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 
-	.footer-right ul {
-		list-style: disc;
-		padding-left: 18px;
-		margin-bottom: 20px;
-	}
+		.icon img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			display: block;
+		}
 
-	.footer-right ul li {
-		margin-bottom: 10px;
-		font-family: 'Source Sans Pro', sans-serif;
-	}
+		/* Responsive */
+		@media (max-width: 768px) {
+			.card {
+				flex: 0 0 100%;
+			}
 
-	.footer-trust {
-		font-size: 14px;
-		opacity: 0.9;
-	}
+			.icon {
+				width: 56px;
+				height: 56px;
+			}
 
-	/* FOOTER BOTTOM */
-	.footer-bottom {
-		position: relative;
-		z-index: 2;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 20px 40px;
-		border-top: 1px solid rgba(255, 255, 255, 0.2);
-		font-size: 13px;
-	}
+			.section h2 {
+				font-size: 32px;
+			}
 
-	.footer-links a {
-		color: #f5f3ee;
-		text-decoration: none;
-		margin: 0 6px;
-		opacity: 0.85;
-	}
+		}
 
-	.footer-links a:hover {
-		opacity: 1;
-	}
+		/* ===== MARQUEE WRAPPER ===== */
+		.product-marquee {
+			width: 100%;
+			overflow: hidden;
+			padding: 40px 0;
+			background: #f7f4f2;
+			margin: 150px 0px;
+			text-align: center;
+		}
 
-	@media (max-width: 768px) {
+		.product-marquee h2 {
+			font-size: 42px;
+			font-family: 'ivypresto-headline';
+			margin-bottom: 50px;
+			text-transform: none;
+			font-weight: 300;
+			letter-spacing: .06em;
+			line-height: 1.2em;
+			font-style: normal;
+			color: #1e1e2f;
+		}
+
+		/* ===== MARQUEE TRACK ===== */
+		.product-track {
+			display: flex;
+			width: max-content;
+			animation: marquee 25s linear infinite;
+		}
+
+		/* Pause animation on hover */
+		.product-marquee:hover .product-track {
+			animation-play-state: paused;
+		}
+
+		/* ===== PRODUCT CARD ===== */
+		.product-item {
+			width: 220px;
+			margin: 0 25px;
+			text-align: center;
+			background: #f7f4f2;
+			border-radius: 10px;
+			padding: 15px;
+			transition: 
+			transform 0.35s ease,
+			background-color 0.35s ease,
+			box-shadow 0.35s ease;
+		}
+
+		/* Card hover effect */
+		.product-item:hover {
+			background: #ffffff;
+			transform: scale(1.08);
+			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+			z-index: 2;
+		}
+
+		/* ===== IMAGE FIX ===== */
+		.product-item img {
+			width: 100%;
+			height: 200px;                 /* FIXED HEIGHT */
+			object-fit: cover;             /* fills area nicely */
+			object-position: center;
+			background: #f0f0f0;
+			border-radius: 8px;
+			padding: 10px;
+			transition: transform 0.35s ease;
+		}
+
+		/* Optional: slight zoom on image too */
+		.product-item:hover img {
+			transform: scale(1.05);
+		}
+
+		/* ===== TEXT ===== */
+		.product-name {
+			margin-top: 10px;
+			color: #000;
+			text-decoration: none;
+			font-size: 14px;
+			font-weight: 400px;
+			transition: opacity 0.3s ease;
+			font-family: 'Source Sans Pro', sans-serif;
+			letter-spacing: 0.3px;
+			text-transform: uppercase;
+		}
+
+		.product-category {
+			margin-top: 6px;
+			font-size: 10px;
+			color: #999;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+		}
+
+
+		/* ===== ANIMATION ===== */
+		@keyframes marquee {
+			0% {
+				transform: translateX(0);
+			}
+			100% {
+				transform: translateX(-50%);
+			}
+		}
+
+		/* /////// MAP SECTION //////////////////*/
+
+		.world-map-section {
+			text-align: center;
+			background: #f7f4f2;
+			padding: 60px 0;
+		}
+
+		.world-map-section h2 {
+			font-size: 42px;
+			font-family: 'ivypresto-headline';
+			margin-bottom: 50px;
+			text-transform: none;
+			font-weight: 300;
+			letter-spacing: .06em;
+			line-height: 1.2em;
+			font-style: normal;
+			color: #1e1e2f;
+		}
+
+		.map-container {
+			position: relative;
+			width: 90%;
+			max-width: 1000px;
+			margin: auto;
+			animation: zoomMap 10s ease-in-out infinite;
+		}
+
+		@keyframes zoomMap {
+			0%   { transform: scale(1); }
+			50%  { transform: scale(1.2); }
+			100% { transform: scale(1); }
+		}
+
+		.map-container img {
+			width: 100%;
+			height: 500px;
+			object-fit: cover;
+			opacity: 0.4;
+			border-radius: 12px;
+		}
+
+		/* ===== SVG LINES ===== */
+
+		.map-lines {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+		}
+
+		.map-lines path {
+			fill: none;
+			stroke: #000000;
+			stroke-width: 0.1;     /* thin line */
+			stroke-dasharray: 3;
+			stroke-linecap: round;
+			animation: moveLine 8s linear infinite;
+		}
+
+		@keyframes moveLine {
+			from { stroke-dashoffset: 0; }
+			to   { stroke-dashoffset: -20; }
+		}
+
+		/* ===== PINS ===== */
+
+		.map-pin {
+			position: absolute;
+			width: 14px;
+			height: 14px;
+			background: #aa8e31;
+			border-radius: 50%;
+			cursor: pointer;
+			animation: blink 1.5s infinite;
+		}
+
+		@keyframes blink {
+			0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.8); }
+			70% { box-shadow: 0 0 0 12px rgba(46, 204, 113, 0); }
+			100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+		}
+
+		/* ===== TOOLTIP ===== */
+
+		.tooltip {
+			position: absolute;
+			bottom: 25px;
+			left: 50%;
+			transform: translateX(-50%);
+			background: #111;
+			color: #fff;
+			padding: 8px 12px;
+			border-radius: 6px;
+			font-size: 13px;
+			white-space: nowrap;
+			display: none;
+		}
+
+		.map-pin:hover .tooltip {
+			display: block;
+		}
+
+		/* ===== PIN POSITIONS ===== */
+
+		.india {
+			top: 47%;
+			left: 70%;
+		}
+
+		.dubai {
+			top: 39%;
+			left: 62%;
+		}
+
+		.slovenia {
+			top: 24%;
+			left: 52%;
+		}
+
+		/* ///////     CONTACT SECTION     /////// */
+		.contact-section {
+			padding: 80px 0px;
+			margin: auto;
+		}
+
+		/* HEADER */
+		.contact-header {
+			text-align: center;
+			margin-bottom: 50px;
+		}
+
+		.contact-header h2 {
+			font-size: 42px;
+			font-family: 'ivypresto-headline';
+			margin-bottom: 18px;
+			text-transform: none;
+			font-weight: 300;
+			letter-spacing: .06em;
+			line-height: 1.2em;
+			font-style: normal;
+			color: #1e1e2f;
+		}
+
+		.contact-header p {
+			color: #666;
+			max-width: 650px;
+			margin: auto;
+			font-size: 18px;
+			font-family: 'Source Sans Pro', sans-serif;
+		}
+
+		/* CONTAINER */
+		.contact-container {
+			display: grid;
+			grid-template-columns: 1fr 1.4fr;
+			gap: 30px;
+			background: #fff;
+			padding: 25px;
+			border-radius: 18px;
+			box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+		}
+
+		/* LEFT CARD */
+		.contact-info {
+			background: url("contact-us.jpg") center/cover no-repeat;
+			border-radius: 16px;
+			position: relative;
+			min-height: 420px;
+			overflow: hidden;
+		}
+
+		.contact-info::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: rgba(0,0,0,0.45);
+		}
+
+		.contact-info .overlay {
+			position: relative;
+			color: #fff;
+			padding: 30px;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+		}
+
+		.contact-info h2 {
+			font-size: 26px;
+			margin-bottom: 10px;
+		}
+
+		.contact-info p {
+			font-size: 14px;
+			margin-bottom: 25px;
+		}
+
+		.contact-info ul {
+			list-style: none;
+		}
+
+		.contact-info li {
+			margin-bottom: 12px;
+			font-size: 15px;
+		}
+
+		/* FORM */
+		.contact-form {
+			padding: 10px;
+		}
+
+		.contact-form .row {
+			display: flex;
+			gap: 15px;
+		}
+
+		.contact-form input,
+		.contact-form textarea {
+			width: 100%;
+			padding: 14px 18px;
+			border-radius: 30px;
+			border: 1px solid #e4e4e4;
+			margin-bottom: 18px;
+			font-size: 14px;
+			outline: none;
+		}
+
+		.contact-form textarea {
+			border-radius: 20px;
+			resize: none;
+		}
+
+		.contact-form button {
+			background: #97c680;
+			color: #fff;
+			border: none;
+			padding: 14px 32px;
+			border-radius: 30px;
+			cursor: pointer;
+			font-size: 15px;
+			transition: background 0.3s ease;
+		}
+
+		.contact-form button:hover {
+			background: #97c680;
+		}
+
+		/* RESPONSIVE */
+		@media (max-width: 900px) {
+			.contact-container {
+				grid-template-columns: 1fr;
+			}
+
+			.contact-form .row {
+				flex-direction: column;
+			}
+
+		}
+
+		/* ///////     FOOTER SECTION     /////// */
+
+		.site-footer {
+			background: #f7f4f2;
+			margin-top: 0;
+		}
+
+		.footer-wrapper {
+			position: relative;
+			min-height: 600px;
+			padding-top: 80px;
+			overflow: hidden;
+			color: #fff;
+		}
+
+		.footer-bg {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center top;
+			z-index: 0;
+		}
+
+		.footer-overlay {
+			position: absolute;
+			inset: 0;
+			z-index: 1;
+			background: linear-gradient(
+				to bottom,
+				#f7f4f2 0%,
+				rgba(247, 244, 242, 0.85) 12%,
+				rgba(247, 244, 242, 0.45) 28%,
+				rgba(0, 0, 0, 0.25) 55%,
+				rgba(0, 0, 0, 0.55) 100%
+			);
+		}
+
+		/* Main Content */
 		.footer-content {
-		grid-template-columns: 1fr;
-		gap: 40px;
-		padding: 40px 24px;
+			position: relative;
+			z-index: 2;
+			display: grid;
+			grid-template-columns: 1fr 1px 1fr;
+			gap: 60px;
+			padding: 60px;
 		}
 
-		.footer-divider {
-		display: none;
-		}
-
+		/* FOOTER BOTTOM */
 		.footer-bottom {
-		flex-direction: column;
-		gap: 10px;
-		text-align: center;
+			font-family: 'Source Sans Pro', sans-serif;
+			position: absolute;      /* position relative to footer-wrapper */
+			bottom: 0;               /* stick to bottom */
+			left: 0;
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 20px 40px;
+			border-top: 1px solid rgba(255, 255, 255, 0.2);
+			font-size: 13px;
+			z-index: 2;              /* above the background */
 		}
 
-		.footer-left h2 {
-		font-size: 32px;
+		.footer-links a {
+			color: #f5f3ee;
+			text-decoration: none;
+			margin: 0 6px;
+			opacity: 0.85;
 		}
-  	}
 
-	/* ///////test  */
+		.footer-links a:hover {
+			opacity: 1;
+		}
 
-	.property-section {
-  /* margin: 0 auto;
-  padding: 80px 24px; */
-}
+		@media (max-width: 768px) {
 
-/* Grid */
-.grid {
-  display: grid;
-  gap: 24px;
-  margin-bottom: 32px;
-}
+			.footer-bottom {
+				flex-direction: column;
+				gap: 10px;
+				text-align: center;
+				font-family: 'Source Sans Pro', sans-serif;
+			}
 
-.grid-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
+		}
 
-/* Text block */
-.text-block {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.text-block h2 {
-  font-size: 40px;
-  margin-bottom: 16px;
-  color: #111;
-  font-family: 'ivypresto-headline';
-  font-weight: 500;
-  letter-spacing: .06em;
-  line-height: 1.2em;
-  font-style: normal;
-
-}
-
-.text-block p {
-  font-size: 16px;
-  color: #666;
-  text-align: justify;
-  font-family: 'Source Sans Pro', sans-serif;
-}
-
-/* Image card */
-.image-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  height: 400px;
-}
-
-.image-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Hover overlay */
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.2)
-  );
-  color: #fff;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-
-  transform: translateY(100%);
-  transition: transform 0.4s ease;
-}
-
-.image-card:hover .overlay {
-  transform: translateY(0);
-}
-
-.overlay h3 {
-  font-size: 22px;
-  margin-bottom: 8px;
-  font-family: 'ivypresto-headline';
-	font-weight: 300;
-	letter-spacing: .06em;
-	line-height: 1.2em;
-	font-style: normal;
-
-}
-
-.overlay p {
-  font-size: 14px;
-  font-family: 'Source Sans Pro', sans-serif;
-  text-align: justify;
-}
-
-.overlay li {
-  font-size: 14px;
-  font-family: 'Source Sans Pro', sans-serif;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .grid-3 {
-    grid-template-columns: 1fr;
-  }
-
-  .text-block h2 {
-    font-size: 28px;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-}
-
-/* ////////////////////what we do ////////////////////// */
-
-.section {
-      max-width: 1200px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .section h2 {
-		font-size: 42px;
-		font-family: 'ivypresto-headline';
-		margin-bottom: 20px;
-		text-transform: none;
-		font-weight: 300;
-		letter-spacing: .06em;
-		line-height: 1.2em;
-		font-style: normal;
-    }
-
-    .section p {
-      font-size: 18px;
-      margin-bottom: 50px;
-	  font-family: 'Source Sans Pro', sans-serif;
-
-    }
-
-    /* Slider */
-    .slider-wrapper {
-      overflow: hidden;
-      width: 100%;
-    }
-
-    .slider-track {
-      display: flex;
-      transition: transform 0.6s ease-in-out;
-    }
-
-    .card {
-      flex: 0 0 33.3333%;
-      padding: 15px;
-    }
-
-    .card-inner {
-      background: var(--card-bg);
-      border-radius: 20px;
-      padding: 40px 25px;
-      height: 100%;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-    }
-
-    .card-inner:hover {
-      transform: translateY(-6px);
-    }
-
-    .icon {
-      font-size: 64px;
-      color: var(--primary);
-      margin-bottom: 25px;
-    }
-
-    .card h3 {
-      font-size: 22px;
-      margin-bottom: 12px;
-	  font-family: 'ivypresto-headline';
-        text-transform: none;
-        font-weight: 500;
-        line-height: 1.2em;
-        font-style: normal;
-    }
-
-    .card p {
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .card {
-        flex: 0 0 50%;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .card {
-        flex: 0 0 100%;
-      }
-
-      .section h2 {
-        font-size: 32px;
-      }
-    }
-
-  </style>
+	</style>
 </head>
+
 <body>
 
+	<nav class="navbar">
+		<div class="navbar-container">
+			<img src="calvaith-logo.png" class="logo" alt="Calvaith">
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="navbar-container">
+			<ul class="menu" id="menu">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Industries</a></li>
+				<li><a href="#">What We Do</a></li>
+				<li><a href="#">Explore IT & Digital Solutions</a></li>
+			</ul>
 
-      <!-- Logo -->
-      <img src="calvaith-logo.png" class="logo" alt="Calvaith">
+			<a href="#" class="connect-btn">Connect Us</a>
 
-      <!-- Menu -->
-      <ul class="menu" id="menu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Industries</a></li>
-        <li><a href="#">What We Do</a></li>
-        <li><a href="#">Explore IT & Digital Solutions</a></li>
-      </ul>
+			<div class="hamburger" id="hamburger">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
 
-      <!-- Right Button -->
-      <a href="#" class="connect-btn">Connect Us</a>
-
-      <!-- Hamburger -->
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-    </div>
-  </nav>
+		</div>
+	</nav>
 
   	<div class="home-container">
-    <section class="hero-section">
-      <div class="hero-wrapper">
+		<section class="hero-section">
+			<div class="hero-wrapper">
 
-        <!-- Background Video -->
-        <video autoplay muted loop playsinline>
-          <source src="https://cdn.dorik.com/65b8a0980c950f00116993f2/videos/production_id_3775278-(1080p)-F1ECI.mp4" type="video/mp4">
-        </video>
+				<!-- Background Video -->
+				<video autoplay muted loop playsinline>
+				<source src="https://cdn.dorik.com/65b8a0980c950f00116993f2/videos/production_id_3775278-(1080p)-F1ECI.mp4" type="video/mp4">
+				</video>
 
-        <!-- Overlay -->
-        <div class="hero-overlay"></div>
+				<!-- Overlay -->
+				<div class="hero-overlay"></div>
 
-        <!-- HERO TEXT -->
-        <div class="hero-content">
-          <h1>
-              Questions to Turn Your Website Visitors into Dream Clients
-            Your Trusted <span>FMCG</span><br />
-            Sourcing Partner
-          </h1>
-          <p>
-            Transforming global supply chains with cutting-edge FMCG sourcing strategies,
-            operational excellence, and strategic consulting that turns complex challenges
-            into seamless business opportunities worldwide.
-          </p>
-        </div>
+				<!-- HERO TEXT -->
+				<div class="hero-content">
+				<h1>
+					Questions to Turn Your Website Visitors into Dream Clients
+					Your Trusted <span>FMCG</span><br />
+					Sourcing Partner
+				</h1>
+				<p>
+					Transforming global supply chains with cutting-edge FMCG sourcing strategies,
+					operational excellence, and strategic consulting that turns complex challenges
+					into seamless business opportunities worldwide.
+				</p>
+				</div>
 
-      </div>
-    </section>
+			</div>
+		</section>
 
-	<div class="text-content-section">
-		<p>
-		  Every operation begins with a challenge—movement across borders, shifting markets,
-		  and increasing expectations around responsibility and efficiency.
-		</p>
-	  
-		<p>
-		  What defines progress is how that complexity is handled: with
-		  <span class="highlight">clarity of structure</span>,
-		  <span class="highlight">disciplined execution</span>, and a
-		  <span class="highlight">confident</span> balance between scale, speed, and sustainability.
-		  By working lean, reducing friction in movement, and approaching logistics with long-term
-		  environmental awareness, systems remain resilient, efficient, and adaptable.
-		  Challenges are addressed methodically, with solutions shaped to endure—creating
-		  <span class="highlight">stable, trusted pathways</span> for global trade across changing markets.
-		</p>
-	</div>
-
-	 <!-- HERO TEXT -->
-	<div class="property-section">
-
-		<!-- ROW 1 -->
-		<div class="grid grid-3">
-		  <!-- Text Column -->
-		  <div class="text-block">
-			<h2>Industries We Serve</h2>
-			<p>
-				Calvaith operates across multiple industries by supplying raw materials, finished products, 
-				and private-label solutions tailored to business needs. Our industry coverage is designed to be 
-				broad yet intentional, allowing us to support diverse business models under a single 
-				operational framework. 
+		<div class="text-content-section">
+			<p class="drop-cap">
+			Every operation begins with a challenge—movement across borders, shifting markets,
+			and increasing expectations around responsibility and efficiency.It is a long established fact that a reader 
+			will be distracted by the readable content of a page
+			when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+			of letters, as opposed to using 'Content here, content here', making it look like readable English.
+			Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text
 			</p>
-		  </div>
-	  
-		  	<!-- Image Column -->
-			<div class="image-card">
-				<img src="property-cover-1.jpg" alt="Residential Homes">
-				<div class="overlay">
-				<h3>Consumer Goods & FMCG</h3>
-					<p>We support brands, retailers, and distributors in the fast-moving consumer goods sector by 
-					providing both white-label manufacturing and Calvaith-owned product lines. <br><br>
-					Includes:  <br>
-					<ul>
-						<li>Packaged consumer goods</li>
-						<li>Daily-use and lifestyle products </li>
-						<li>Retail and bulk FMCG items </li>
-					</ul><br>
-					<p>Who we serve:</p>
-					<ul>
-						<li>Emerging and established brands</li>
-						<li>Distributors and wholesalers </li>
-						<li>Retail chains and e-commerce businesses </li>
-					</ul>
+		
+			<p>
+			What defines progress is how that complexity is handled: with
+			<span class="highlight">clarity of structure</span>,
+			<span class="highlight">disciplined execution</span>, and a
+			<span class="highlight">confident</span> balance between scale, speed, and sustainability.
+			By working lean, reducing friction in movement, and approaching logistics with long-term
+			environmental awareness, systems remain resilient, efficient, and adaptable.
+			Challenges are addressed methodically, with solutions shaped to endure—creating
+			<span class="highlight">stable, trusted pathways</span> for global trade across changing markets.
+			
+			</p>
+
+			<p>It is a long established fact that a reader will be distracted by the readable content of a page
+				when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+				of letters, as opposed to using 'Content here, content here', making it look like readable English.
+				Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,
+				and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
+				evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+			</p>
+
+		</div>
+
+		<!-- HERO TEXT -->
+		<div class="industry-section">
+			<!-- ROW 1 -->
+			<div class="grid grid-3">
+				<!-- Text Column -->
+				<div class="text-block">
+					<h2>Industries We Serve</h2>
+					<p>
+						Calvaith operates across multiple industries by supplying raw materials, finished products, 
+						and private-label solutions tailored to business needs. Our industry coverage is designed to be 
+						broad yet intentional, allowing us to support diverse business models under a single 
+						operational framework. 
 					</p>
+				</div>
+		
+				<!-- Image Column -->
+				<div class="image-card">
+					<img src="industry/industry-cover-1.jpg" alt="Residential Homes">
+					<div class="overlay">
+						<h3>Consumer Goods & FMCG</h3>
+						<p>We support brands, retailers, and distributors in the fast-moving consumer goods sector by 
+						providing both white-label manufacturing and Calvaith-owned product lines. Lorem Ipsum is simply
+						dummy text of the printing and typesetting industry.<br><br>
+						Includes:  <br>
+						<ul>
+							<li>Packaged consumer goods</li>
+							<li>Daily-use and lifestyle products </li>
+							<li>Retail and bulk FMCG items </li>
+						</ul><br>
+						<p>Who we serve:</p>
+						<ul>
+							<li>Emerging and established brands</li>
+							<li>Distributors and wholesalers </li>
+							<li>Retail chains and e-commerce businesses </li>
+						</ul>
+						</p>
+					</div>
+				</div>
+
+				<div class="image-card">
+					<img src="industry/industry-cover-2.jpg" alt="Apartments">
+					<div class="overlay">
+						<h3>Industrial Materials &amp; Metals</h3>
+						<p>
+						Calvaith supplies industrial-grade raw materials and semi-processed inputs that form the
+						backbone of manufacturing, construction, and infrastructure projects.
+						<br><br>
+						Includes:
+						<ul>
+							<li>Steel / aluminum (raw, processed, or fabricated forms)</li>
+							<li>Industrial materials and components</li>
+							<li>Custom-specification materials</li>
+						</ul>
+						<br><p>Who we serve:</p>
+						<ul>
+							<li>Manufacturers</li>
+							<li>Fabricators</li>
+							<li>Construction and infrastructure companies</li>
+						</ul>
+						</p>
+					</div>
+				</div>
+
+			</div>
+		
+			<!-- ROW 2 -->
+			<div class="grid grid-3">
+
+				<div class="image-card">
+					<img src="industry/industry-cover-3.jpg" alt="Office">
+					<div class="overlay">
+						<h3>Sports, Fitness &amp; Recreational Equipment</h3>
+						<p>
+						We deliver finished sports and recreational products for institutional, commercial, and private
+						branding use.
+						<br><br>
+						Includes:
+						<ul>
+							<li>Footballs and sports equipment</li>
+							<li>Training and recreational items</li>
+							<li>Custom-branded sports products</li>
+						</ul>
+						<br><p>Who we serve:</p>
+						<ul>
+							<li>Sports academies and clubs</li>
+							<li>Schools and institutions</li>
+							<li>Private-label sports brands</li>
+						</ul>
+						</p>
+					</div>
+				</div>
+
+				<div class="image-card">
+					<img src="industry/industry-cover-4.jpg" alt="Villa">
+					<div class="overlay">
+						<h3>Construction, Infrastructure &amp; Outdoor Solutions</h3>
+						<p>
+						Calvaith provides products and systems used in residential, commercial, and public
+						infrastructure environments.
+						<br><br>
+						Includes:
+						<ul>
+							<li>Pergolas and outdoor structures</li>
+							<li>Modular and fabricated components</li>
+							<li>Project-based construction products</li>
+						</ul>
+						<br><p>Who we serve:</p>
+						<ul>
+							<li>Builders and developers</li>
+							<li>Architects and contractors</li>
+							<li>Commercial property owners</li>
+						</ul>
+						</p>
+					</div>
+				</div>
+			
+				<div class="image-card">
+					<img src="industry/industry-cover-5.jpg" alt="Commercial">
+					<div class="overlay">
+					<h3>Custom &amp; Multi-Industry Business Solutions</h3>
+				<p>
+				Beyond defined sectors, Calvaith supports businesses that require cross-industry sourcing,
+				custom manufacturing, or non-standard product solutions.
+				<br><br>
+				This allows us to serve:
+				<ul>
+					<li>Startups with unique product concepts</li>
+					<li>Enterprises with diversified procurement needs</li>
+					<li>Businesses entering new product categories</li>
+				</ul>
+				</p>
 				</div>
 			</div>
 
-			<div class="image-card">
-				<img src="property-cover-2.jpg" alt="Apartments">
-				<div class="overlay">
-					<h3>Industrial Materials &amp; Metals</h3>
-					<p>
-					Calvaith supplies industrial-grade raw materials and semi-processed inputs that form the
-					backbone of manufacturing, construction, and infrastructure projects.
-					<br><br>
-					Includes:
-					<ul>
-						<li>Steel / aluminum (raw, processed, or fabricated forms)</li>
-						<li>Industrial materials and components</li>
-						<li>Custom-specification materials</li>
-					</ul>
-					<br><p>Who we serve:</p>
-					<ul>
-						<li>Manufacturers</li>
-						<li>Fabricators</li>
-						<li>Construction and infrastructure companies</li>
-					</ul>
-					</p>
-				</div>
-		  	</div>
-
-		</div>
-	  
-		<!-- ROW 2 -->
-		<div class="grid grid-3">
-
-		  	<div class="image-card">
-				<img src="property-cover-3.jpg" alt="Office">
-				<div class="overlay">
-					<h3>Sports, Fitness &amp; Recreational Equipment</h3>
-					<p>
-					We deliver finished sports and recreational products for institutional, commercial, and private
-					branding use.
-					<br><br>
-					Includes:
-					<ul>
-						<li>Footballs and sports equipment</li>
-						<li>Training and recreational items</li>
-						<li>Custom-branded sports products</li>
-					</ul>
-					<br><p>Who we serve:</p>
-					<ul>
-						<li>Sports academies and clubs</li>
-						<li>Schools and institutions</li>
-						<li>Private-label sports brands</li>
-					</ul>
-					</p>
-				</div>
-		  	</div>
-
-			  <div class="image-card">
-				<img src="property-cover-4.jpg" alt="Villa">
-				<div class="overlay">
-			<h3>Construction, Infrastructure &amp; Outdoor Solutions</h3>
-			<p>
-			  Calvaith provides products and systems used in residential, commercial, and public
-			  infrastructure environments.
-			  <br><br>
-			  Includes:
-			  <ul>
-				<li>Pergolas and outdoor structures</li>
-				<li>Modular and fabricated components</li>
-				<li>Project-based construction products</li>
-			  </ul>
-			  <br><p>Who we serve:</p>
-			  <ul>
-				<li>Builders and developers</li>
-				<li>Architects and contractors</li>
-				<li>Commercial property owners</li>
-			  </ul>
-			</p>
-				</div>
-			  </div>
-		  
-			  <div class="image-card">
-				<img src="property-cover-5.jpg" alt="Commercial">
-				<div class="overlay">
-				  <h3>Custom &amp; Multi-Industry Business Solutions</h3>
-			<p>
-			  Beyond defined sectors, Calvaith supports businesses that require cross-industry sourcing,
-			  custom manufacturing, or non-standard product solutions.
-			  <br><br>
-			  This allows us to serve:
-			  <ul>
-				<li>Startups with unique product concepts</li>
-				<li>Enterprises with diversified procurement needs</li>
-				<li>Businesses entering new product categories</li>
-			  </ul>
-			</p>
-				</div>
-			  </div>
-
-
+			</div>
 
 		</div>
 
-		<section class="section">
-			<h2>Our Core Capabilities</h2>
-			<p>End-to-end solutions designed to scale your business efficiently.</p>
+		<div class="product-marquee">
+			
+			<h2>Our Products</h2>
+			<div class="product-track">
+			
+				<!-- PRODUCT 1 -->
+				<div class="product-item">
+				<img src="pastel/1.jpeg" alt="Pendant Lamp">
+				<div class="product-name">Pendant Lamp</div>
+				<div class="product-category">Lighting</div>
+				</div>
+			
+				<!-- PRODUCT 2 -->
+				<div class="product-item">
+				<img src="pastel/2.jpg" alt="Love Birds">
+				<div class="product-name">Love Birds</div>
+				<div class="product-category">Decor</div>
+				</div>
+			
+				<!-- PRODUCT 3 -->
+				<div class="product-item">
+				<img src="pastel/3.jpg" alt="Salt & Pepper">
+				<div class="product-name">Salt & Pepper Mill</div>
+				<div class="product-category">Kitchen</div>
+				</div>
+			
+				<!-- PRODUCT 4 -->
+				<div class="product-item">
+				<img src="pastel/4.jpg" alt="Coffee Maker">
+				<div class="product-name">Coffee Maker</div>
+				<div class="product-category">Appliances</div>
+				</div>
+			
+				<!-- PRODUCT 5 -->
+				<div class="product-item">
+				<img src="pastel/1.jpeg" alt="Modern Chair">
+				<div class="product-name">Modern Chair</div>
+				<div class="product-category">Furniture</div>
+				</div>
+			
+				<!-- PRODUCT 6 -->
+				<div class="product-item">
+				<img src="pastel/2.jpg" alt="Wall Clock">
+				<div class="product-name">Wall Clock</div>
+				<div class="product-category">Decor</div>
+				</div>
+			
+				<!-- DUPLICATE ITEMS FOR SMOOTH LOOP -->
+				<div class="product-item">
+				<img src="pastel/3.jpg" alt="Pendant Lamp">
+				<div class="product-name">Pendant Lamp</div>
+				<div class="product-category">Lighting</div>
+				</div>
+			
+				<div class="product-item">
+				<img src="pastel/4.jpg" alt="Love Birds">
+				<div class="product-name">Love Birds</div>
+				<div class="product-category">Decor</div>
+				</div>
+			
+				<div class="product-item">
+				<img src="pastel/1.jpeg" alt="Salt & Pepper">
+				<div class="product-name">Salt & Pepper Mill</div>
+				<div class="product-category">Kitchen</div>
+				</div>
+			
+				<div class="product-item">
+				<img src="pastel/2.jpg" alt="Coffee Maker">
+				<div class="product-name">Coffee Maker</div>
+				<div class="product-category">Appliances</div>
+				</div>
+			
+				<div class="product-item">
+				<img src="pastel/3.jpg" alt="Modern Chair">
+				<div class="product-name">Modern Chair</div>
+				<div class="product-category">Furniture</div>
+				</div>
+			
+				<div class="product-item">
+				<img src="pastel/4.jpg" alt="Wall Clock">
+				<div class="product-name">Wall Clock</div>
+				<div class="product-category">Decor</div>
+				</div>
+			
+			</div>
+		</div>
+
+		
+		<section class="gallery-section">
+			<h2>Image Gallery</h2>
+		
+			<div class="masonry">
+				<img src="gallery/1.jpg" alt="">
+				<img src="gallery/2.jpg" alt="">
+				<img src="gallery/3.jpg" alt="">
+				<img src="gallery/4.jpg" alt="">
+				<img src="gallery/5.jpg" alt="">
+				<img src="gallery/6.jpg" alt="">
+				<img src="gallery/7.jpg" alt="">
+				<img src="gallery/8.jpg" alt="">
+				<img src="gallery/9.jpg" alt="">
+				<img src="gallery/10.jpg" alt="">
+				<img src="gallery/11.jpg" alt="">
+				<img src="gallery/12.jpg" alt="">
+				<img src="gallery/13.jpg" alt="">
+				<img src="gallery/14.jpg" alt="">
+				<img src="gallery/15.jpg" alt="">
+				<img src="gallery/16.jpg" alt="">
+			</div>
+		</section>
+
+		<!-- LIGHTBOX -->
+		<div class="lightbox" id="lightbox">
+			<span class="close">&times;</span>
+			<img class="lightbox-img" id="lightboxImg">
+		</div>
+
+		<section class="what-we-do-section">
+			
+			<h2>What We Do</h2>
+			<p>Calvaith operates across the entire product and supply value chain, enabling businesses to 
+				source, create, and scale products efficiently. </p>
 		
 			<div class="slider-wrapper">
-			  <div class="slider-track" id="sliderTrack">
+			<div class="slider-track" id="sliderTrack">
 		
 				<!-- Item 1 -->
 				<div class="card">
-				  <div class="card-inner">
-					<div class="icon"><i class="fa-solid fa-boxes-stacked"></i></div>
-					<h3>Raw Material Sourcing & Supply</h3>
-					<p>
-					  Reliable sourcing of high-quality raw materials through a
-					  trusted global supplier network.
-					</p>
-				  </div>
+					<div class="card-inner">
+						<div class="icon">
+							<img src="icons/sourcing-supply.png" alt="sourcing-supply">
+						</div>
+						<h3>Raw Material Sourcing & Supply</h3>
+						<p>
+							We source and supply raw materials across multiple industries, ensuring: 
+							Quality compliance ,Volume scalability, Cost efficiency, Reliable logistics 
+							This includes industrial materials, metals, and other foundational inputs. 
+						</p>
+					</div>
 				</div>
 		
 				<!-- Item 2 -->
 				<div class="card">
-				  <div class="card-inner">
-					<div class="icon"><i class="fa-solid fa-industry"></i></div>
-					<h3>Finished Product Manufacturing & Supply</h3>
-					<p>
-					  Scalable manufacturing solutions delivering consistent,
-					  market-ready finished products.
-					</p>
-				  </div>
+					<div class="card-inner">
+						<div class="icon">
+							<img src="icons/product-manufacturing.png" alt="Product Manufacturing">
+						</div>
+						<h3>Finished Product Manufacturing & Supply</h3>
+						<p>We provide ready-to-market products across different categories, either as standardized products, or as custom-developed solutions based on client requirements
+							This applies to FMCG, sports goods, construction products, and more. 
+						</p>
+					</div>
 				</div>
 		
 				<!-- Item 3 -->
 				<div class="card">
-				  <div class="card-inner">
-					<div class="icon"><i class="fa-solid fa-tags"></i></div>
+				<div class="card-inner">
+					<div class="icon">
+						<img src="icons/label.png" alt="label">
+					</div>
 					<h3>Private Label & OEM Solutions</h3>
-					<p>
-					  Custom-branded and OEM offerings tailored to your business
-					  identity and market needs.
+					<p>Calvaith enables businesses to launch and scale products under their own brand name. 
+						Services include Product development, White-label manufacturing, Packaging and branding integration, Scalable production support. 
+						This function operates across all industries we serve.
 					</p>
-				  </div>
+				</div>
 				</div>
 		
 				<!-- Item 4 -->
 				<div class="card">
-				  <div class="card-inner">
-					<div class="icon"><i class="fa-solid fa-lightbulb"></i></div>
+				<div class="card-inner">
+					<div class="icon">
+						<img src="icons/product-development.png" alt="Product Developmentt">
+					</div>
 					<h3>Proprietary Product Development</h3>
-					<p>
-					  Innovation-driven product development from concept to
-					  commercialization.
+					<p>We design, develop, and distribute Calvaith-owned product lines that are Unique, Market-driven, Category-specific or cross-category 
+						These products reflect Calvaith's independent innovation capability. 
+						Some of our own products are Bamboo salt,Ash,Coffe-Ashwanghanda protein bar etc
 					</p>
-				  </div>
+				</div>
 				</div>
 		
 				<!-- Item 5 -->
 				<div class="card">
-				  <div class="card-inner">
-					<div class="icon"><i class="fa-solid fa-diagram-project"></i></div>
+				<div class="card-inner">
+					<div class="icon">
+						<img src="icons/custom-business.png" alt="Business Enablement">
+					</div>
 					<h3>Custom & End-to-End Business Enablement</h3>
-					<p>
-					  Comprehensive solutions covering strategy, execution, and
-					  operational growth.
+					<p>For select partners, we act as a full-cycle product and supply partner, supporting Concept to production, Sourcing to delivery 
+						,Multi-category procurement under one entity
 					</p>
-				  </div>
+				</div>
 				</div>
 		
-			  </div>
 			</div>
-		  </section>
-	  
+			</div>
+		</section>
+
+		<div class="world-map-section">
+			<h2>Our Global Presence</h2>
+			<div class="map-container">
 		
+				<img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" alt="World Map">
+		
+				<!-- SVG CONNECTION LINES (CURVED) -->
+				<svg class="map-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+
+					<path d="M62 39 Q66 50 70 47" />
+
+					<!-- Dubai → Slovenia -->
+					<path d="M62 39 Q56 22 52 24" />
+
+				</svg>
+		
+				<!-- INDIA -->
+				<div class="map-pin india">
+					<span class="tooltip">India<br>Bangalore, Karnataka</span>
+				</div>
+		
+				<!-- DUBAI -->
+				<div class="map-pin dubai">
+					<span class="tooltip">Dubai<br>Business Bay, UAE</span>
+				</div>
+		
+				<!-- SLOVENIA -->
+				<div class="map-pin slovenia">
+					<span class="tooltip">Slovenia<br>Ljubljana</span>
+				</div>
+		
+			</div>
+		</div>
+
+		<section class="contact-section">
+			<div class="contact-header">
+			  <h2>Have questions? ready to help!</h2>
+			  <p>
+				Looking for your dream home or ready to sell?  
+				Our expert team offers personalized guidance and market expertise tailored to you.
+			  </p>
+			</div>
 		  
-		
-	  
-	</div>
-	  
+			<div class="contact-container">
+			  
+			  <!-- LEFT CARD -->
+			  <div class="contact-info">
+				<div class="overlay">
+				  <h2>Contact information</h2>
+				  <p>Ready to find your dream home or sell your property? We're here to help!</p>
+		  
+				  <ul>
+					<li>📞 +1 0239 0310 1122</li>
+					<li>✉️ support@gleamer.com</li>
+					<li>📍 Blane Street, Manchester</li>
+				  </ul>
+				</div>
+			  </div>
+		  
+			  <!-- RIGHT FORM -->
+			  <form class="contact-form">
+				<div class="row">
+				  <input type="text" placeholder="Name*" required />
+				  <input type="tel" placeholder="Phone number*" required />
+				</div>
+		  
+				<input type="email" placeholder="Email address*" required />
+				<textarea rows="6" placeholder="Write here your message"></textarea>
+		  
+				<button type="submit">Send message</button>
+			  </form>
+		  
+			</div>
+		</section>
 
 	</div>
+
+
 	<!-- FOOTER -->
 	<footer class="site-footer">
-    <div class="footer-wrapper">
-
-      <!-- Background Image -->
-      <img src="footer-image.jpeg" alt="Footer Background" class="footer-bg">
-
-      <!-- Overlay -->
-      <div class="footer-overlay"></div>
-
-      <!-- Footer Content -->
-      <div class="footer-content">
-
-        <!-- LEFT -->
-        <div class="footer-left">
-          <h2>Let’s Talk</h2>
-          <p>
-            Have a project in mind? Reach out to our team<br />
-            and start a conversation.
-          </p>
-
-          <a href="#" class="footer-btn">Get in Touch</a>
-
-          <div class="footer-whatsapp">
-            <span>or connect with us on <strong>WhatsApp</strong></span>
-            <div class="whatsapp-number">
-              <span>+386 69887945</span>
-            </div>
-            <div class="whatsapp-number">
-              <span>connect@calvaith.com</span>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- DIVIDER -->
-        <div class="footer-divider"></div>
-
-        <!-- RIGHT -->
-        <div class="footer-right">
-          <h3>Operating Across Time Zones</h3>
-          <ul>
-            <li>Europe (CET)</li>
-            <li>Asia (IST)</li>
-            <li>United Arab Emirates (GST)</li>
-          </ul>
-
-          <p class="footer-trust">
-            Trusted by partners across Europe, Asia, and the Middle East.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- FOOTER BOTTOM -->
-      <div class="footer-bottom">
-        <span>© 2026 CALVAITH. All Rights Reserved.</span>
-        <div class="footer-links">
-          <a href="#">Privacy Policy</a>
-          <span>|</span>
-          <a href="#">Terms</a>
-        </div>
-      </div>
-
-    </div>
-  </footer>
+		<div class="footer-wrapper">
+			<!-- Background image -->
+			<img src="footer-image.jpeg" alt="Footer Background" class="footer-bg">
+			<div class="footer-overlay"></div>
+			<!-- Footer Bottom (visible on image) -->
+			<div class="footer-bottom">
+				<span>© 2026 CALVAITH. All Rights Reserved.</span>
+				<div class="footer-links">
+					<a href="#">Privacy Policy</a>
+					<span>|</span>
+					<a href="#">Terms</a>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 
-  <!-- JS -->
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const menu = document.getElementById("menu");
 
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("active");
-      menu.classList.toggle("active");
-    });
-  </script>
 
-<script>
-    const track = document.getElementById("sliderTrack");
-    const totalItems = 5;
-    let index = 0;
 
-    function getVisibleItems() {
-      if (window.innerWidth <= 600) return 1;
-      if (window.innerWidth <= 900) return 2;
-      return 3;
-    }
+	<!-- JS -->
+	<script>
+		const hamburger = document.getElementById("hamburger");
+		const menu = document.getElementById("menu");
 
-    function slide() {
-      const visible = getVisibleItems();
-      const maxIndex = totalItems - visible;
+		hamburger.addEventListener("click", () => {
+			hamburger.classList.toggle("active");
+			menu.classList.toggle("active");
+		});
+  	</script>
 
-      index++;
-      if (index > maxIndex) index = 0;
+	<script>
+		const track = document.getElementById("sliderTrack");
+		const totalItems = 5;
+		let index = 0;
 
-      const translateX = -(index * (100 / visible));
-      track.style.transform = `translateX(${translateX}%)`;
-    }
+		function getVisibleItems() {
+		if (window.innerWidth <= 600) return 1;
+		if (window.innerWidth <= 900) return 2;
+		return 3;
+		}
 
-    setInterval(slide, 3000);
-    window.addEventListener("resize", () => (index = 0));
-  </script>
+		function slide() {
+		const visible = getVisibleItems();
+		const maxIndex = totalItems - visible;
 
-<script>
-	let currentScroll = 0;
-	let targetScroll = 0;
-	let ease = 0.08;
-	
-	window.addEventListener('wheel', (e) => {
-	  e.preventDefault();
-	  targetScroll += e.deltaY;
-	  targetScroll = Math.max(
-		0,
-		Math.min(targetScroll, document.body.scrollHeight - window.innerHeight)
-	  );
-	}, { passive: false });
-	
-	function smoothScroll() {
-	  currentScroll += (targetScroll - currentScroll) * ease;
-	  window.scrollTo(0, currentScroll);
-	  requestAnimationFrame(smoothScroll);
-	}
-	
-	smoothScroll();
+		index++;
+		if (index > maxIndex) index = 0;
+
+		const translateX = -(index * (100 / visible));
+		track.style.transform = `translateX(${translateX}%)`;
+		}
+
+		setInterval(slide, 3000);
+		window.addEventListener("resize", () => (index = 0));
+	</script>
+
+	<script>
+		let currentScroll = 0;
+		let targetScroll = 0;
+		let ease = 0.08;
+		
+		let isTouching = false;
+		let touchStartY = 0;
+		
+		// Desktop wheel
+		window.addEventListener('wheel', (e) => {
+			e.preventDefault();
+			targetScroll += e.deltaY;
+			clampTarget();
+		}, { passive: false });
+		
+		// Mobile touch
+		window.addEventListener('touchstart', (e) => {
+			isTouching = true;
+			touchStartY = e.touches[0].clientY;
+		}, { passive: false });
+		
+		window.addEventListener('touchmove', (e) => {
+			if (!isTouching) return;
+			const touchY = e.touches[0].clientY;
+			const delta = touchStartY - touchY; // swipe up = scroll down
+			targetScroll += delta;
+			clampTarget();
+			touchStartY = touchY;
+		}, { passive: false });
+		
+		window.addEventListener('touchend', () => {
+			isTouching = false;
+		});
+		
+		// Helper to keep scroll within bounds
+		function clampTarget() {
+			targetScroll = Math.max(
+				0,
+				Math.min(targetScroll, document.body.scrollHeight - window.innerHeight)
+			);
+		}
+		
+		// Smooth scroll loop
+		function smoothScroll() {
+			currentScroll += (targetScroll - currentScroll) * ease;
+			window.scrollTo(0, currentScroll);
+			requestAnimationFrame(smoothScroll);
+		}
+		
+		smoothScroll();
+	</script>
+
+	<script>
+		const lightbox = document.getElementById("lightbox");
+		const lightboxImg = document.getElementById("lightboxImg");
+		const images = document.querySelectorAll(".masonry img");
+		const closeBtn = document.querySelector(".lightbox .close");
+
+		// OPEN
+		images.forEach(img => {
+		img.addEventListener("click", () => {
+			lightbox.classList.add("active");
+			lightboxImg.src = img.src;
+		});
+		});
+
+		// CLOSE BUTTON
+		closeBtn.addEventListener("click", () => {
+		lightbox.classList.remove("active");
+		});
+
+		// CLICK OUTSIDE IMAGE
+		lightbox.addEventListener("click", (e) => {
+		if (e.target !== lightboxImg) {
+			lightbox.classList.remove("active");
+		}
+		});
+
+		// ESC KEY
+		document.addEventListener("keydown", (e) => {
+		if (e.key === "Escape") {
+			lightbox.classList.remove("active");
+		}
+		});
 	</script>
 
 </body>
 </html>
-
