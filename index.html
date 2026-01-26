@@ -283,13 +283,13 @@
 			text-align: center;
 			font-size: 42px;
 			font-family: 'ivypresto-headline';
-			margin-bottom: 18px;
 			text-transform: none;
 			font-weight: 300;
 			letter-spacing: .06em;
 			line-height: 1.2em;
 			font-style: normal;
 			color: #1e1e2f;
+			margin-bottom: 50px;
 		}
 
 		/* MASONRY LAYOUT */
@@ -305,7 +305,7 @@
 		margin-bottom: 20px;
 		border-radius: 14px;
 		break-inside: avoid;
-		filter: grayscale(100%);
+		/* filter: grayscale(100%); */
 		transition: filter 0.4s ease, transform 0.4s ease;
 		}
 
@@ -439,28 +439,33 @@
 		}
 
 		.text-block {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-		}
+  display: flex;
+  flex-direction: column;
+  height: 100%;            /* important */
+}
 
-		.text-block h2 {
-			font-size: 40px;
-			margin-bottom: 16px;
-			color: #111;
-			font-family: 'ivypresto-headline';
-			font-weight: 500;
-			letter-spacing: .06em;
-			line-height: 1.2em;
-			font-style: normal;
-		}
+/* Heading sticks to top */
+.text-block h2 {
+  font-size: 40px;
+  margin-top: 25px;     /* 👈 adjustable gap */
+  color: #111;
+  font-family: 'ivypresto-headline';
+  font-weight: 500;
+  letter-spacing: .06em;
+  line-height: 1.2em;
+  font-style: normal;
+}
 
-		.text-block p {
-			font-size: 16px;
-			color: #666;
-			text-align: justify;
-			font-family: 'Source Sans Pro', sans-serif;
-		}
+/* Paragraph centers vertically */
+.text-block p {
+  font-size: 16px;
+  color: #666;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-top: 50px;       /* 👈 pushes paragraph down */
+  margin-bottom: auto;    /* 👈 keeps it centered */
+  max-width: 520px;
+  line-height: 1.5;
+}
 
 		
 
@@ -492,7 +497,7 @@
 			flex-direction: column;
 			justify-content: flex-start;
 			transform: translateY(100%);
-			transition: transform 0.4s ease;
+			transition: transform 0.9s ease;
 			overflow-y: auto;
 		}
 
@@ -538,12 +543,13 @@
 		.what-we-do-section {
 			margin: 150px 0px;
 			text-align: center;
+			padding: 0 120px;
 		}
 
 		.what-we-do-section h2 {
 			font-size: 42px;
 			font-family: 'ivypresto-headline';
-			margin-bottom: 20px;
+			margin-bottom: 18px;
 			text-transform: none;
 			font-weight: 300;
 			letter-spacing: .06em;
@@ -553,114 +559,93 @@
 		}
 
 		.what-we-do-section p {
+			color: #666;
+			max-width: 650px;
+			margin: auto;
 			font-size: 18px;
-			margin-bottom: 50px;
 			font-family: 'Source Sans Pro', sans-serif;
 		}
 
-		.slider-wrapper {
-			overflow: hidden;
-			width: 100%;
+		.what-we-do-grid {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 50px 0px; /* 👈 reduced vertical & horizontal gap */
+			margin-top: 70px;
+			justify-items: center; /* 👈 centers cards nicely */
 		}
 
-		.slider-track {
-			display: flex;
-			transition: transform 0.6s ease-in-out;
+		.service-item {
+
+			text-align: center;
+  background-color: #fff;
+  padding: 24px 20px;
+  border-radius: 8px;
+  width: 100%;        /* 👈 allow grid to control width */
+  max-width: 360px; 
+
 		}
 
-		.card {
-			flex: 0 0 33.3333%;
-			padding: 15px;
-		}
-
-		.card:nth-child(5n + 1) .card-inner {
-			background-color: var(--c1);
-		}
-
-		.card:nth-child(5n + 2) .card-inner {
-			background-color: var(--c2);
-		}
-
-		.card:nth-child(5n + 3) .card-inner {
-			background-color: var(--c3);
-		}
-
-		.card:nth-child(5n + 4) .card-inner {
-			background-color: var(--c4);
-		}
-
-		.card:nth-child(5n + 5) .card-inner {
-			background-color: var(--c5);
-		}
-
-		.card-inner {
-			background: var(--card-bg);
-			border-radius: 20px;
-			padding: 40px 25px;
-			height: 100%;
-			box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-			transition: transform 0.3s ease;
-			background-image: linear-gradient(
-				to bottom right,
-				rgba(255,255,255,0.4),
-				rgba(255,255,255,0)
-			);
-		}
-
-		.card-inner:hover {
-			transform: translateY(-6px);
-		}
-
-		.card h3 {
-			font-size: 22px;
-			margin-bottom: 12px;
-			font-family: 'ivypresto-headline';
-			text-transform: none;
-			font-weight: 500;
-			line-height: 1.2em;
-			font-style: normal;
-		}
-
-		.card p {
-			font-size: 15px;
-			color: var(--muted);
-			line-height: 1.6;
-			margin: 0;
-			text-align:justify;
-		}
-
-		.icon {
-			width: 120px;
-			height: 120px;
+		/* ICON CONTAINER */
+		.service-item .icon {
+			width: 90px;
+			height: 90px;
 			margin: 0 auto 22px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 		}
 
-		.icon img {
-			width: 100%;
-			height: 100%;
-			object-fit: contain;
-			display: block;
+		/* ICON IMAGE FILLS AREA */
+		.service-item .icon img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		display: block;
+		}
+		
+		.service-item h3 {
+		font-size: 20px;
+		font-family: 'ivypresto-headline';
+		font-weight: 300;
+		color: #1e1e2f;
+		margin-bottom: 10px;
+		letter-spacing: .06em;
+		line-height: 1.2em;
+		font-style: normal;
 		}
 
-		/* Responsive */
-		@media (max-width: 768px) {
-			.card {
-				flex: 0 0 100%;
-			}
-
-			.icon {
-				width: 56px;
-				height: 56px;
-			}
-
-			.section h2 {
-				font-size: 32px;
-			}
-
+		.service-item p {
+		font-size: 14px;
+		color: #6b7280;
+		line-height: 1.5;
+		max-width: 320px;
+		margin: 0 auto;
+		font-family: 'Source Sans Pro', sans-serif;
 		}
+
+		@media (max-width: 1200px) {
+  .what-we-do-section {
+    padding: 0 60px;
+  }
+}
+
+@media (max-width: 992px) {
+  .what-we-do-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .what-we-do-section {
+    padding: 0 20px;
+  }
+
+  .what-we-do-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
 
 		/* ===== MARQUEE WRAPPER ===== */
 		.product-marquee {
@@ -690,9 +675,10 @@
 			width: max-content;
 			animation: marquee 25s linear infinite;
 		}
+		
 
 		/* Pause animation on hover */
-		.product-marquee:hover .product-track {
+		.product-track:hover {
 			animation-play-state: paused;
 		}
 
@@ -770,30 +756,91 @@
 		/* /////// MAP SECTION //////////////////*/
 
 		.world-map-section {
-			text-align: center;
-			background: #f7f4f2;
-			padding: 60px 0;
+		background: #f7f4f2;
+		padding: 60px 40px;
+		min-height: 100vh;
 		}
+
+
+
+		.map-layout {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 48px; /* 👈 controls space between panel & map */
+		max-width: 1400px;
+		margin: auto;
+		}
+
+
+
+		.map-container {
+		flex: 0 0 50%;
+		order: 1; /* RIGHT */
+		position: relative;
+		animation: zoomMap 10s ease-in-out infinite;
+		}
+
+
+
+		.locations-panel {
+		flex: 0 0 30%;
+		order: 2; /* LEFT */
+		background: #f7f4f2;
+		border-radius: 16px;
+		padding: 30px;
+		box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 24px;
+		}
+
+		.location-card {
+		padding: 20px;
+		border-left: 4px solid #aa8e31;
+		background: #fafafa;
+		border-radius: 8px;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+
+		.location-card:hover {
+		transform: translateX(6px);
+		box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+		}
+
+		.location-card h3 {
+			font-family: 'Source Sans Pro', sans-serif;
+			margin: 0;
+			font-size: 18px;
+			color: #1e1e2f;
+			letter-spacing: 0.04em;
+		}
+
+		.location-card p {
+			margin-top: 6px;
+			font-size: 14px;
+			color: #555;
+			line-height: 1.4;
+			color: #666;
+			font-size: 18px;
+			font-family: 'Source Sans Pro', sans-serif;
+		}
+
 
 		.world-map-section h2 {
 			font-size: 42px;
 			font-family: 'ivypresto-headline';
-			margin-bottom: 50px;
+			margin-bottom: 100px;
 			text-transform: none;
 			font-weight: 300;
 			letter-spacing: .06em;
 			line-height: 1.2em;
 			font-style: normal;
 			color: #1e1e2f;
+			text-align: center;
 		}
 
-		.map-container {
-			position: relative;
-			width: 90%;
-			max-width: 1000px;
-			margin: auto;
-			animation: zoomMap 10s ease-in-out infinite;
-		}
 
 		@keyframes zoomMap {
 			0%   { transform: scale(1); }
@@ -802,11 +849,14 @@
 		}
 
 		.map-container img {
-			width: 100%;
-			height: 500px;
-			object-fit: cover;
-			opacity: 0.4;
-			border-radius: 12px;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		opacity: 0.35;
+		border-radius: 20px;
+		filter: brightness(0) saturate(100%) 
+          invert(34%) sepia(94%) saturate(749%) 
+          hue-rotate(190deg);
 		}
 
 		/* ===== SVG LINES ===== */
@@ -872,21 +922,31 @@
 			display: block;
 		}
 
-		/* ===== PIN POSITIONS ===== */
-
 		.india {
-			top: 47%;
-			left: 70%;
+			top: 53%;
+			left: 75%;
 		}
 
 		.dubai {
-			top: 39%;
-			left: 62%;
+			top: 45%;
+			left: 65%;
 		}
 
 		.slovenia {
-			top: 24%;
-			left: 52%;
+			top: 33%;
+			left: 50%;
+		}
+
+		
+		@media (max-width: 900px) {
+		.map-layout {
+			flex-direction: column;
+		}
+
+		.map-container,
+		.locations-panel {
+			flex: 1 1 100%;
+		}
 		}
 
 		/* ///////     CONTACT SECTION     /////// */
@@ -904,7 +964,7 @@
 		.contact-header h2 {
 			font-size: 42px;
 			font-family: 'ivypresto-headline';
-			margin-bottom: 18px;
+			margin-bottom: 40px;
 			text-transform: none;
 			font-weight: 300;
 			letter-spacing: .06em;
@@ -919,6 +979,7 @@
 			margin: auto;
 			font-size: 18px;
 			font-family: 'Source Sans Pro', sans-serif;
+			margin-bottom: 70px;
 		}
 
 		/* CONTAINER */
@@ -1175,34 +1236,31 @@
 		</section>
 
 		<div class="text-content-section">
+
 			<p class="drop-cap">
-			Every operation begins with a challenge—movement across borders, shifting markets,
-			and increasing expectations around responsibility and efficiency.It is a long established fact that a reader 
-			will be distracted by the readable content of a page
-			when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
-			of letters, as opposed to using 'Content here, content here', making it look like readable English.
-			Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text
+				Commerce today operates under constant pressure, border regulations, supply volatility, 
+				cost sensitivity, and time-critical execution. Progress is defined not by ambition alone, but by
+				 the ability to manage complexity with structure, discipline, and consistency. Efficient trade depends
+				  on reducing friction across sourcing, movement, and delivery, while remaining adaptable to changing global conditions.
 			</p>
 		
 			<p>
-			What defines progress is how that complexity is handled: with
-			<span class="highlight">clarity of structure</span>,
-			<span class="highlight">disciplined execution</span>, and a
-			<span class="highlight">confident</span> balance between scale, speed, and sustainability.
-			By working lean, reducing friction in movement, and approaching logistics with long-term
-			environmental awareness, systems remain resilient, efficient, and adaptable.
-			Challenges are addressed methodically, with solutions shaped to endure—creating
-			<span class="highlight">stable, trusted pathways</span> for global trade across changing markets.
-			
+				Calvaith is a global import and export company enabling the movement of products and
+				 materials across international markets. Rooted in the historic trade city of Calicut,
+				  one of the world’s earliest global trade hubs, the name <span class="highlight">Calvaith</span> combines “Cal” from Calicut with “Vaith”,
+				   derived from Sanskrit, signifying enabling movement and support. This origin reflects a purpose grounded
+				    in trade as an active, structured system.
 			</p>
 
-			<p>It is a long established fact that a reader will be distracted by the readable content of a page
-				when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
-				of letters, as opposed to using 'Content here, content here', making it look like readable English.
-				Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,
-				and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
-				evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+			<p>Our operations span sourcing, logistics, and cross-border trade across regions, 
+				industries, and supply chains without limitation by geography or category. We operate through 
+				a structured, execution-driven, and lean mode of business, focusing on efficiency, accountability,
+				 and long-term value creation. Sustainability is embedded in how we operate, by <span class="highlight">reducing waste,
+				  optimizing movement, and building trade structures</span> designed for durability rather than short-term gain.
+			</p>
 
+			<p>The focus remains on building resilient trade framework ,systems that move goods efficiently,
+				 responsibly, and at scale across global markets.
 			</p>
 
 		</div>
@@ -1352,107 +1410,243 @@
 			
 				<!-- PRODUCT 1 -->
 				<div class="product-item">
-				<img src="pastel/1.jpeg" alt="Pendant Lamp">
-				<div class="product-name">Pendant Lamp</div>
-				<div class="product-category">Lighting</div>
+				<img src="products/prod1.jpeg" alt="Pendant Lamp">
+				<div class="product-name">Banana Chips</div>
+				<div class="product-category">Snacks</div>
 				</div>
 			
 				<!-- PRODUCT 2 -->
 				<div class="product-item">
-				<img src="pastel/2.jpg" alt="Love Birds">
-				<div class="product-name">Love Birds</div>
-				<div class="product-category">Decor</div>
+				<img src="products/prod2.jpeg" alt="Love Birds">
+				<div class="product-name">Nutr</div>
+				<div class="product-category">Chocolate</div>
 				</div>
 			
 				<!-- PRODUCT 3 -->
 				<div class="product-item">
-				<img src="pastel/3.jpg" alt="Salt & Pepper">
-				<div class="product-name">Salt & Pepper Mill</div>
-				<div class="product-category">Kitchen</div>
+				<img src="products/prod3.jpeg" alt="Salt & Pepper">
+				<div class="product-name">Lipa</div>
+				<div class="product-category">Coffee Powder</div>
 				</div>
 			
 				<!-- PRODUCT 4 -->
 				<div class="product-item">
-				<img src="pastel/4.jpg" alt="Coffee Maker">
-				<div class="product-name">Coffee Maker</div>
-				<div class="product-category">Appliances</div>
+				<img src="products/prod4.jpeg" alt="Coffee Maker">
+				<div class="product-name">Oudh Attar</div>
+				<div class="product-category">Perfume</div>
 				</div>
 			
 				<!-- PRODUCT 5 -->
 				<div class="product-item">
-				<img src="pastel/1.jpeg" alt="Modern Chair">
-				<div class="product-name">Modern Chair</div>
-				<div class="product-category">Furniture</div>
+				<img src="products/prod5.jpeg" alt="Modern Chair">
+				<div class="product-name">Body Creams</div>
+				<div class="product-category">Beauty</div>
 				</div>
 			
 				<!-- PRODUCT 6 -->
 				<div class="product-item">
-				<img src="pastel/2.jpg" alt="Wall Clock">
-				<div class="product-name">Wall Clock</div>
-				<div class="product-category">Decor</div>
-				</div>
-			
-				<!-- DUPLICATE ITEMS FOR SMOOTH LOOP -->
-				<div class="product-item">
-				<img src="pastel/3.jpg" alt="Pendant Lamp">
-				<div class="product-name">Pendant Lamp</div>
-				<div class="product-category">Lighting</div>
-				</div>
-			
-				<div class="product-item">
-				<img src="pastel/4.jpg" alt="Love Birds">
-				<div class="product-name">Love Birds</div>
-				<div class="product-category">Decor</div>
-				</div>
-			
-				<div class="product-item">
-				<img src="pastel/1.jpeg" alt="Salt & Pepper">
-				<div class="product-name">Salt & Pepper Mill</div>
-				<div class="product-category">Kitchen</div>
-				</div>
-			
-				<div class="product-item">
-				<img src="pastel/2.jpg" alt="Coffee Maker">
-				<div class="product-name">Coffee Maker</div>
-				<div class="product-category">Appliances</div>
-				</div>
-			
-				<div class="product-item">
-				<img src="pastel/3.jpg" alt="Modern Chair">
-				<div class="product-name">Modern Chair</div>
+				<img src="products/prod6.jpeg" alt="Wall Clock">
+				<div class="product-name">Modern Sofas</div>
 				<div class="product-category">Furniture</div>
 				</div>
-			
+
+				<!-- PRODUCT 1 -->
 				<div class="product-item">
-				<img src="pastel/4.jpg" alt="Wall Clock">
-				<div class="product-name">Wall Clock</div>
-				<div class="product-category">Decor</div>
-				</div>
+					<img src="products/prod1.jpeg" alt="Pendant Lamp">
+					<div class="product-name">Banana Chips</div>
+					<div class="product-category">Snacks</div>
+					</div>
+				
+					<!-- PRODUCT 2 -->
+					<div class="product-item">
+					<img src="products/prod2.jpeg" alt="Love Birds">
+					<div class="product-name">Nutr</div>
+					<div class="product-category">Chocolate</div>
+					</div>
+				
+					<!-- PRODUCT 3 -->
+					<div class="product-item">
+					<img src="products/prod3.jpeg" alt="Salt & Pepper">
+					<div class="product-name">Lipa</div>
+					<div class="product-category">Coffee Powder</div>
+					</div>
+				
+					<!-- PRODUCT 4 -->
+					<div class="product-item">
+					<img src="products/prod4.jpeg" alt="Coffee Maker">
+					<div class="product-name">Oudh Attar</div>
+					<div class="product-category">Perfume</div>
+					</div>
+				
+					<!-- PRODUCT 5 -->
+					<div class="product-item">
+					<img src="products/prod5.jpeg" alt="Modern Chair">
+					<div class="product-name">Body Creams</div>
+					<div class="product-category">Beauty</div>
+					</div>
+				
+					<!-- PRODUCT 6 -->
+					<div class="product-item">
+					<img src="products/prod6.jpeg" alt="Wall Clock">
+					<div class="product-name">Modern Sofas</div>
+					<div class="product-category">Furniture</div>
+					</div>
 			
+			</div>
+		</div>
+
+		<section class="what-we-do-section">
+			
+			<h2>What We Do</h2>
+			<p>Calvaith operates across the entire product and supply value chain, enabling businesses to 
+				source, create, and scale products efficiently. </p>
+
+			<div class="what-we-do-grid">
+		
+				<div class="service-item">
+					<div class="icon">
+					  <img src="icons/sourcing-supply.png" alt="">
+					</div>
+					<h3>Raw Material Sourcing & Supply</h3>
+					<p>
+						We source and supply raw materials across multiple industries, ensuring: 
+							Quality compliance ,Volume scalability, Cost efficiency, Reliable logistics.
+					</p>
+				</div>
+		
+				<!-- Item 2 -->
+				<div class="service-item">
+						<div class="icon">
+							<img src="icons/product-manufacturing.png" alt="Product Manufacturing">
+						</div>
+						<h3>Product Manufacturing & Supply</h3>
+						<p>We provide ready-to-market products across different categories, either as standardized products, or as custom-developed solutions based on client requirements
+						</p>
+					
+				</div>
+		
+				<!-- Item 3 -->
+				<div class="service-item">
+					<div class="icon">
+						<img src="icons/label.png" alt="label">
+					</div>
+					<h3>Private Label & OEM Solutions</h3>
+					<p>Calvaith enables businesses to launch and scale products under their own brand name. 
+						Services include Product development, White-label manufacturing, Packaging and branding integration, Scalable production support. 
+					</p>
+				</div>
+		
+				<!-- Item 4 -->
+				<div class="service-item">
+				
+					<div class="icon">
+						<img src="icons/product-development.png" alt="Product Developmentt">
+					</div>
+					<h3>Proprietary Product Development</h3>
+					<p>We design, develop, and distribute Calvaith-owned product lines that are Unique, Market-driven, Category-specific or cross-category 
+						These products reflect Calvaith's independent innovation capability.
+					</p>
+				
+				</div>
+		
+				<!-- Item 5 -->
+				<div class="service-item">
+					<div class="icon">
+						<img src="icons/custom-business.png" alt="Business Enablement">
+					</div>
+					<h3>Custom & End-to-End Business</h3>
+					<p>For select partners, we act as a full-cycle product and supply partner, supporting Concept to production, Sourcing to delivery 
+						,Multi-category procurement under one entity
+					</p>
+				
+				</div>
+
+				<!-- Item 6 -->
+				<div class="service-item">
+					<div class="icon">
+						<img src="icons/time-award.png" alt="Software Development">
+					</div>
+					<h3>Software Development</h3>
+					<p>We design and develop custom mobile and web applications tailored to your business needs. Our solutions are scalable, 
+						secure, and built to deliver seamless user experiences across platforms.
+					</p>
+				
+				</div>
+
+			</div>
+		</section>
+
+		<!-- what we do section here -->
+
+		<div class="world-map-section">
+			<h2>Our Global Presence</h2>
+		  
+			<div class="map-layout">
+			  
+			  <!-- MAP (70%) -->
+			  <div class="map-container">
+				<img src="world-map.svg" alt="World Map">
+		  
+				<svg class="map-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+				  <path d="M62 39 Q66 50 70 47" />
+				  <path d="M62 39 Q56 22 52 24" />
+				</svg>
+		  
+				<div class="map-pin india">
+				  <span class="tooltip">India<br>Bangalore, Karnataka</span>
+				</div>
+		  
+				<div class="map-pin dubai">
+				  <span class="tooltip">Dubai<br>Business Bay, UAE</span>
+				</div>
+		  
+				<div class="map-pin slovenia">
+				  <span class="tooltip">Slovenia<br>Ljubljana</span>
+				</div>
+			  </div>
+		  
+			  <!-- LOCATIONS LIST (30%) -->
+			  <div class="locations-panel">
+				<div class="location-card">
+				  <h3>India</h3>
+				  <p>Bangalore, Karnataka</p>
+				</div>
+		  
+				<div class="location-card">
+				  <h3>Dubai</h3>
+				  <p>Business Bay, UAE</p>
+				</div>
+		  
+				<div class="location-card">
+				  <h3>Slovenia</h3>
+				  <p>Ljubljana</p>
+				</div>
+			  </div>
+		  
 			</div>
 		</div>
 
 		
 		<section class="gallery-section">
-			<h2>Image Gallery</h2>
+			<h2>Gallery</h2>
 		
 			<div class="masonry">
-				<img src="gallery/1.jpg" alt="">
+				<!-- <img src="gallery/1.jpg" alt=""> -->
 				<img src="gallery/2.jpg" alt="">
-				<img src="gallery/3.jpg" alt="">
+				<!-- <img src="gallery/3.jpg" alt=""> -->
 				<img src="gallery/4.jpg" alt="">
 				<img src="gallery/5.jpg" alt="">
 				<img src="gallery/6.jpg" alt="">
 				<img src="gallery/7.jpg" alt="">
 				<img src="gallery/8.jpg" alt="">
-				<img src="gallery/9.jpg" alt="">
+				<!-- <img src="gallery/9.jpg" alt=""> -->
 				<img src="gallery/10.jpg" alt="">
-				<img src="gallery/11.jpg" alt="">
-				<img src="gallery/12.jpg" alt="">
+				<!-- <img src="gallery/11.jpg" alt=""> -->
+				<!-- <img src="gallery/12.jpg" alt=""> -->
 				<img src="gallery/13.jpg" alt="">
-				<img src="gallery/14.jpg" alt="">
+				<!-- <img src="gallery/14.jpg" alt=""> -->
 				<img src="gallery/15.jpg" alt="">
-				<img src="gallery/16.jpg" alt="">
+				<!-- <img src="gallery/16.jpg" alt=""> -->
 			</div>
 		</section>
 
@@ -1462,121 +1656,7 @@
 			<img class="lightbox-img" id="lightboxImg">
 		</div>
 
-		<section class="what-we-do-section">
-			
-			<h2>What We Do</h2>
-			<p>Calvaith operates across the entire product and supply value chain, enabling businesses to 
-				source, create, and scale products efficiently. </p>
 		
-			<div class="slider-wrapper">
-			<div class="slider-track" id="sliderTrack">
-		
-				<!-- Item 1 -->
-				<div class="card">
-					<div class="card-inner">
-						<div class="icon">
-							<img src="icons/sourcing-supply.png" alt="sourcing-supply">
-						</div>
-						<h3>Raw Material Sourcing & Supply</h3>
-						<p>
-							We source and supply raw materials across multiple industries, ensuring: 
-							Quality compliance ,Volume scalability, Cost efficiency, Reliable logistics 
-							This includes industrial materials, metals, and other foundational inputs. 
-						</p>
-					</div>
-				</div>
-		
-				<!-- Item 2 -->
-				<div class="card">
-					<div class="card-inner">
-						<div class="icon">
-							<img src="icons/product-manufacturing.png" alt="Product Manufacturing">
-						</div>
-						<h3>Finished Product Manufacturing & Supply</h3>
-						<p>We provide ready-to-market products across different categories, either as standardized products, or as custom-developed solutions based on client requirements
-							This applies to FMCG, sports goods, construction products, and more. 
-						</p>
-					</div>
-				</div>
-		
-				<!-- Item 3 -->
-				<div class="card">
-				<div class="card-inner">
-					<div class="icon">
-						<img src="icons/label.png" alt="label">
-					</div>
-					<h3>Private Label & OEM Solutions</h3>
-					<p>Calvaith enables businesses to launch and scale products under their own brand name. 
-						Services include Product development, White-label manufacturing, Packaging and branding integration, Scalable production support. 
-						This function operates across all industries we serve.
-					</p>
-				</div>
-				</div>
-		
-				<!-- Item 4 -->
-				<div class="card">
-				<div class="card-inner">
-					<div class="icon">
-						<img src="icons/product-development.png" alt="Product Developmentt">
-					</div>
-					<h3>Proprietary Product Development</h3>
-					<p>We design, develop, and distribute Calvaith-owned product lines that are Unique, Market-driven, Category-specific or cross-category 
-						These products reflect Calvaith's independent innovation capability. 
-						Some of our own products are Bamboo salt,Ash,Coffe-Ashwanghanda protein bar etc
-					</p>
-				</div>
-				</div>
-		
-				<!-- Item 5 -->
-				<div class="card">
-				<div class="card-inner">
-					<div class="icon">
-						<img src="icons/custom-business.png" alt="Business Enablement">
-					</div>
-					<h3>Custom & End-to-End Business Enablement</h3>
-					<p>For select partners, we act as a full-cycle product and supply partner, supporting Concept to production, Sourcing to delivery 
-						,Multi-category procurement under one entity
-					</p>
-				</div>
-				</div>
-		
-			</div>
-			</div>
-		</section>
-
-		<div class="world-map-section">
-			<h2>Our Global Presence</h2>
-			<div class="map-container">
-		
-				<img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" alt="World Map">
-		
-				<!-- SVG CONNECTION LINES (CURVED) -->
-				<svg class="map-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
-
-					<path d="M62 39 Q66 50 70 47" />
-
-					<!-- Dubai → Slovenia -->
-					<path d="M62 39 Q56 22 52 24" />
-
-				</svg>
-		
-				<!-- INDIA -->
-				<div class="map-pin india">
-					<span class="tooltip">India<br>Bangalore, Karnataka</span>
-				</div>
-		
-				<!-- DUBAI -->
-				<div class="map-pin dubai">
-					<span class="tooltip">Dubai<br>Business Bay, UAE</span>
-				</div>
-		
-				<!-- SLOVENIA -->
-				<div class="map-pin slovenia">
-					<span class="tooltip">Slovenia<br>Ljubljana</span>
-				</div>
-		
-			</div>
-		</div>
 
 		<section class="contact-section">
 			<div class="contact-header">
@@ -1682,55 +1762,34 @@
 	</script>
 
 	<script>
-		let currentScroll = 0;
-		let targetScroll = 0;
-		let ease = 0.08;
-		
-		let isTouching = false;
-		let touchStartY = 0;
-		
-		// Desktop wheel
-		window.addEventListener('wheel', (e) => {
-			e.preventDefault();
-			targetScroll += e.deltaY;
-			clampTarget();
-		}, { passive: false });
-		
-		// Mobile touch
-		window.addEventListener('touchstart', (e) => {
-			isTouching = true;
-			touchStartY = e.touches[0].clientY;
-		}, { passive: false });
-		
-		window.addEventListener('touchmove', (e) => {
-			if (!isTouching) return;
-			const touchY = e.touches[0].clientY;
-			const delta = touchStartY - touchY; // swipe up = scroll down
-			targetScroll += delta;
-			clampTarget();
-			touchStartY = touchY;
-		}, { passive: false });
-		
-		window.addEventListener('touchend', () => {
-			isTouching = false;
-		});
-		
-		// Helper to keep scroll within bounds
-		function clampTarget() {
-			targetScroll = Math.max(
-				0,
-				Math.min(targetScroll, document.body.scrollHeight - window.innerHeight)
-			);
+		const isMobile = 'ontouchstart' in window || window.innerWidth < 768;
+
+		if (!isMobile) {
+			let currentScroll = 0;
+			let targetScroll = 0;
+			let ease = 0.08;
+
+			window.addEventListener('wheel', (e) => {
+				e.preventDefault();
+				targetScroll += e.deltaY;
+				clampTarget();
+			}, { passive: false });
+
+			function clampTarget() {
+				targetScroll = Math.max(
+					0,
+					Math.min(targetScroll, document.body.scrollHeight - window.innerHeight)
+				);
+			}
+
+			function smoothScroll() {
+				currentScroll += (targetScroll - currentScroll) * ease;
+				window.scrollTo(0, currentScroll);
+				requestAnimationFrame(smoothScroll);
+			}
+
+			smoothScroll();
 		}
-		
-		// Smooth scroll loop
-		function smoothScroll() {
-			currentScroll += (targetScroll - currentScroll) * ease;
-			window.scrollTo(0, currentScroll);
-			requestAnimationFrame(smoothScroll);
-		}
-		
-		smoothScroll();
 	</script>
 
 	<script>
