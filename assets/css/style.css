@@ -338,7 +338,7 @@ font-style: normal;
 font-size: 16px;
 color: #666;
 font-family: 'Source Sans Pro', sans-serif;
-margin-top: 50px;       /* 👈 pushes paragraph down */
+margin-top: 30px;       /* 👈 pushes paragraph down */
 margin-bottom: auto;    /* 👈 keeps it centered */
 max-width: 520px;
 line-height: 1.5;
@@ -438,7 +438,6 @@ line-height: 1.5;
 
 .what-we-do-section p {
     color: #666;
-    max-width: 650px;
     margin: auto;
     font-size: 18px;
     font-family: 'Source Sans Pro', sans-serif;
@@ -457,7 +456,7 @@ line-height: 1.5;
     text-align: center;
 background-color: #fff;
 padding: 24px 20px;
-border-radius: 8px;
+border-radius: 20px;
 width: 100%;        /* 👈 allow grid to control width */
 max-width: 360px; 
 
@@ -635,7 +634,7 @@ gap: 40px;
 
 .world-map-section {
 background: #f7f4f2;
-padding: 60px 40px;
+padding: 5px 40px;
 min-height: 100vh;
 }
 
@@ -876,7 +875,7 @@ border-radius: 20px;
 .contact-header h2 {
     font-size: 42px;
     font-family: 'ivypresto-headline';
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     text-transform: none;
     font-weight: 300;
     letter-spacing: .06em;
@@ -887,7 +886,6 @@ border-radius: 20px;
 
 .contact-header p {
     color: #666;
-    max-width: 650px;
     margin: auto;
     font-size: 18px;
     font-family: 'Source Sans Pro', sans-serif;
@@ -1043,13 +1041,13 @@ border-radius: 20px;
   .process-card {
     /* background: #ffffff; */
     border-radius: 18px;
-    padding: 36px 26px;
+    padding: 20px 26px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.06);
     transition: all 0.35s ease;
   }
   
   .process-card img {
-    height: 180px;
+    height: 125px;
   }
   
   .process-card h3 {
@@ -1100,7 +1098,7 @@ border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 25px;
   }
   
   .process-timeline .dot {
@@ -1398,7 +1396,7 @@ border-radius: 20px;
     justify-content: center;
     font-family: 'ivypresto-headline';
     font-style: italic;
-    color: #eb9a35 !important;
+    color: #e19434 !important;
     line-height: 1.1;
 }
 
@@ -1483,7 +1481,7 @@ border-radius: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 80px 0;
+    padding: 35px 0;
   }
 
   .timeline-container {
@@ -1494,7 +1492,7 @@ border-radius: 20px;
   /* HEADER SECTION */
   .timeline-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 25px;
   }
   
   .timeline-header h2 {
@@ -1662,6 +1660,5 @@ border-radius: 20px;
     .timeline-divider { margin: 8px 0; }
     
   }
-
 
 
