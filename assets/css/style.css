@@ -1202,11 +1202,16 @@ border-radius: 20px;
     font-family: 'Source Sans Pro', sans-serif;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items:  flex-start;
     cursor: pointer;
     color: #111;
     transition: color 0.3s ease;
   }
+
+    .faq-text {
+        flex: 1;
+        text-align: left;
+    }
   
   /* ACTIVE QUESTION COLOR */
   .faq-item.active .faq-question {
