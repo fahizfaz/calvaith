@@ -1594,13 +1594,13 @@ border-radius: 20px;
   
   /* POSITIONING */
   .item-1 { 
-    top: 85%; 
+    top: 80%; 
     left: 4%; 
     transform: translateY(-50%);
   }
   
   .item-2 { 
-    top: 80%; 
+    top: 76%; 
     left: 22%; 
     transform: translateY(-50%);
   }
