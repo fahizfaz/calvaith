@@ -632,6 +632,7 @@ gap: 40px;
 
 /* /////// MAP SECTION //////////////////*/
 
+
 .world-map-section {
 background: #f7f4f2;
 padding: 5px 40px;
@@ -739,6 +740,48 @@ order: 2;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+/* Split panel vertically */
+.locations-panel {
+    flex: 0 0 30%;
+    background: #f7f4f2;
+    border-radius: 16px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 👈 key */
+    gap: 30px;
+}
+
+/* Top list */
+.locations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Bottom description */
+.location-description {
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 14px;
+    border: 1px solid #eee;
+}
+
+.location-description h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #1e1e2f;
+    font-family: 'ivypresto-headline';
+    letter-spacing: 0.05em;
+}
+
+.location-description p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
 
 @keyframes zoomMap {
     0%   { transform: scale(1); }
@@ -753,6 +796,8 @@ object-fit: contain;
 opacity: 0.2;
 border-radius: 20px;
 }
+
+
 
 /* ===== SVG LINES ===== */
 
@@ -833,6 +878,11 @@ border-radius: 20px;
     display: block;
 }
 
+.canada {
+    top: 18%;   /* adjust */
+    left: 22%;  /* adjust */
+}
+
 .india {
     top: 53%;
     left: 75%;
@@ -846,6 +896,11 @@ border-radius: 20px;
 .slovenia {
     top: 33%;
     left: 50%;
+}
+
+.russia {
+    top: 33%;
+    left: 90%;
 }
 
 
