@@ -413,68 +413,25 @@
 			  <!-- MAP (70%) -->
 			  <div class="map-container">
 				<img src="assets/images/world-map.svg" alt="World Map">
-		  
-		
 
 				<svg class="map-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
 
-					<!-- ROUTES -->
-					<path id="route-plane" d="M50 33 C40 15, 85 15, 75 53" />
-					<path id="route-ship" d="M50 33 C55 45, 68 48, 75 53" />
+					<!-- FULL ROUTE -->
+					<path id="route-full"
+					d="
+					M22 20
+					C35 0, 45 25, 50 33
+					S60 50, 65 45
+					S95 20, 90 33
+					S80 65, 75 53
+					"/>
+
+				</svg>
 				  
-					<!-- ✈ PLANE -->
-					<g class="icon plane">
-						<path d="
-						  M32 4
-						  L36 20
-						  L60 28
-						  L60 36
-						  L36 32
-						  L32 60
-						  L28 32
-						  L4 36
-						  L4 28
-						  L28 20
-						  Z"
-						  transform="scale(0.05)"
-						/>
-				  
-					  <animateMotion dur="30s" repeatCount="indefinite" direction="alternate">
-						<mpath href="#route-plane"/>
-					  </animateMotion>
-					</g>
-				  
-					<!-- 🚢 SHIP -->
-					<g class="icon ship">
-						<path d="
-						  M6 36
-						  L10 50
-						  H54
-						  L58 36
-						  V18
-						  L32 6
-						  L6 18
-						  Z"
-						  transform="scale(0.05)"
-						/>
-				  
-					  <animateMotion dur="30s" repeatCount="indefinite">
-						<mpath href="#route-ship"/>
-					  </animateMotion>
-				  
-					  <!-- Gentle floating -->
-					  <animateTransform
-						attributeName="transform"
-						type="translate"
-						from="0 0"
-						to="0 -0.8"
-						dur="2.5s"
-						repeatCount="indefinite"
-						direction="alternate"/>
-					</g>
-				  
-				  </svg>
-				  
+				<div class="map-pin canada">
+					<i class=""></i>
+					<span class="tooltip">Canada</span>
+				</div>
 		  
 				<div class="map-pin india">
 					<i class="fa-solid fa-location-dot"></i>
@@ -491,40 +448,61 @@
 					<span class="tooltip"> Ljubljana</span>
 				</div>
 
+				<div class="map-pin russia">
+					<i class=""></i>
+					<span class="tooltip">Russia</span>
+				</div>
+
 			  </div>
 		  
-			  <!-- LOCATIONS LIST (30%) -->
-			  <div class="locations-panel">
-				<div class="location-card">
-				  <div class="icon">
-					<i class="fa-solid fa-paper-plane"></i>
-				  </div>
-				  <div class="location-info">
-					<h3>Calicut</h3>
-					<p>673303</p>
-				  </div>
+			<div class="locations-panel">
+
+				<!-- TOP: LOCATION CARDS -->
+				<div class="locations-list">
+					
+					<div class="location-card">
+					<div class="icon">
+						<i class="fa-solid fa-paper-plane"></i>
+					</div>
+					<div class="location-info">
+						<h3>Calicut</h3>
+						<p>673303</p>
+					</div>
+					</div>
+
+					<div class="location-card">
+					<div class="icon">
+						<i class="fa-solid fa-paper-plane"></i>
+					</div>
+					<div class="location-info">
+						<h3>Dubai</h3>
+						<p>25314</p>
+					</div>
+					</div>
+
+					<div class="location-card">
+					<div class="icon">
+						<i class="fa-solid fa-paper-plane"></i>
+					</div>
+					<div class="location-info">
+						<h3>Ljubljana</h3>
+						<p>1000</p>
+					</div>
+					</div>
+
 				</div>
-			  
-				<div class="location-card">
-				  <div class="icon">
-					<i class="fa-solid fa-paper-plane"></i>
-				  </div>
-				  <div class="location-info">
-					<h3>Dubai</h3>
-					<p>25314</p>
-				  </div>
+
+				<!-- BOTTOM: DESCRIPTION -->
+				<div class="location-description">
+					<h4>Global Logistics Excellence</h4>
+					<p>
+					Our international network ensures seamless cargo movement across continents.
+					With strategic hubs in key global locations, we deliver efficient,
+					reliable, and scalable logistics solutions tailored to modern trade demands.
+					</p>
 				</div>
-			  
-				<div class="location-card">
-				  <div class="icon">
-					<i class="fa-solid fa-paper-plane"></i>
-				  </div>
-				  <div class="location-info">
-					<h3>Ljubljana</h3>
-					<p>1000</p>
-				  </div>
+
 				</div>
-			  </div>
 		  
 			</div>
 		</div>
@@ -595,9 +573,6 @@
 			</div>
 		</section>
 
-	
-		  
-		
 		<section class="timeline-wrapper">
 			<div class="timeline-container">
 			  
