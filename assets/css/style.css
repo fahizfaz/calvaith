@@ -664,7 +664,7 @@ min-height: 100vh;
 display: flex;
 align-items: center;
 /* justify-content: space-between; */
-gap: 170px; /* 👈 controls space between panel & map */
+gap: 60px; /* 👈 controls space between panel & map */
 max-width: 1400px;
 margin: auto;
 
@@ -682,7 +682,7 @@ position: relative;
 
 
 .locations-panel {
-flex: 0 0 30%;
+flex: 1 0 30%;
 background: #f7f4f2;
 border-radius: 16px;
 padding: 30px;
@@ -693,13 +693,12 @@ gap: 24px;
 order: 2;
 }
 
-
 .location-card {
     display: flex;
     align-items: center;
     gap: 16px;
-    padding: 18px 20px;
-    background: #fafafa;
+    padding: 18px 190px;
+    /* background: #fafafa; */
     border-radius: 14px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -740,17 +739,7 @@ order: 2;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-/* Split panel vertically */
-.locations-panel {
-    flex: 0 0 30%;
-    background: #f7f4f2;
-    border-radius: 16px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* 👈 key */
-    gap: 30px;
-}
+
 
 /* Top list */
 .locations-list {
@@ -761,25 +750,17 @@ order: 2;
 
 /* Bottom description */
 .location-description {
-    background: #fafafa;
-    padding: 20px;
-    border-radius: 14px;
-    border: 1px solid #eee;
-}
-
-.location-description h4 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #1e1e2f;
-    font-family: 'ivypresto-headline';
-    letter-spacing: 0.05em;
+    width: 100%;
+    padding: 10px 0 0;
 }
 
 .location-description p {
-    font-size: 14px;
+    font-size: 13px;
     color: #666;
-    line-height: 1.6;
+    line-height: 1.7;
     margin: 0;
+    word-break: break-word;
+    text-align: right;
 }
 
 
@@ -961,7 +942,7 @@ border-radius: 20px;
 
 /* LEFT CARD */
 .contact-info {
-    background: url("../images/contact-us.jpg") center/cover no-repeat;
+    background: url("../images/contact-us.jpeg") center/cover no-repeat;
     border-radius: 16px;
     position: relative;
     min-height: 420px;
