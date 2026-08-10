@@ -24,9 +24,18 @@
     --gold: #aa8e31;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     background-color: #f7f4f2;
     font-family: 'IvyPrestoHeadline', Georgia, serif;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
 }
 
 .home-container{
@@ -111,6 +120,7 @@ display: none;
 flex-direction: column;
 cursor: pointer;
 gap: 6px;
+z-index: 1100;
 }
 
 .hamburger span {
@@ -147,6 +157,7 @@ transform: rotate(-45deg) translate(6px, -6px);
     gap: 18px;
     padding: 20px 0;
     display: none;
+    box-shadow: 0 12px 20px rgba(0,0,0,0.06);
 }
 
 .menu.active {
@@ -156,6 +167,25 @@ transform: rotate(-45deg) translate(6px, -6px);
 .hamburger {
     display: flex;
 }
+
+.navbar-container {
+    padding: 14px 20px;
+}
+
+.connect-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+}
+}
+
+@media (max-width: 480px) {
+    .logo {
+        height: 46px;
+    }
+
+    .connect-btn {
+        display: none; /* keep header uncluttered on very small screens */
+    }
 }
 
 /* ///////     VIDEO SECTION     /////// */
@@ -232,6 +262,10 @@ text-align: justify;
 }
 
 @media (max-width: 768px) {
+    .home-container {
+        padding: 0 20px;
+    }
+
     .hero-wrapper {
     height: 420px;
     border-radius: 18px;
@@ -244,13 +278,33 @@ text-align: justify;
     }
 
     .hero-content h1 {
-    font-size: 20px;
+    font-size: 22px;
+    margin-bottom: 20px;
     text-align: center;
     }
 
     .hero-content p {
     font-size: 15px;
     text-align: justify;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-container {
+        padding: 0 16px;
+    }
+
+    .hero-wrapper {
+        height: 380px;
+        border-radius: 14px;
+    }
+
+    .hero-content h1 {
+        font-size: 19px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
     }
 }
 
@@ -289,11 +343,11 @@ text-align: justify;
 
 @media (max-width: 768px) {
     .text-content-section {
-        padding: 48px 20px;
+        padding: 48px 0px;
     }
 
     .text-content-section p {
-        font-size: 16px;
+        font-size: 15px;
         margin-bottom: 20px;
     }
 }
@@ -408,11 +462,37 @@ line-height: 1.5;
 @media (max-width: 768px) {
     .grid-3 {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .text-block h2 {
         font-size: 28px;
+        margin-top: 0;
         font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .text-block p {
+        margin-top: 16px;
+    }
+
+    /* Hover doesn't exist on touch devices, so show the overlay content
+       in-flow instead of as a hidden hover panel */
+    .image-card {
+        height: auto;
+    }
+
+    .image-card img {
+        height: 220px;
+    }
+
+    .overlay {
+        position: static;
+        inset: auto;
+        transform: none;
+        transition: none;
+        background: #1e1e2f;
+        border-radius: 0 0 20px 20px;
+        max-height: none;
     }
 }
 
@@ -512,6 +592,21 @@ grid-template-columns: repeat(2, 1fr);
 }
 }
 
+@media (max-width: 768px) {
+    .what-we-do-section {
+        margin: 90px 0px;
+    }
+
+    .what-we-do-section h2 {
+        font-size: 30px;
+    }
+
+    .what-we-do-section p {
+        font-size: 15px;
+        padding: 0 10px;
+    }
+}
+
 @media (max-width: 576px) {
 .what-we-do-section {
 padding: 0 20px;
@@ -520,6 +615,7 @@ padding: 0 20px;
 .what-we-do-grid {
 grid-template-columns: 1fr;
 gap: 40px;
+margin-top: 40px;
 }
 }
 
@@ -627,6 +723,27 @@ gap: 40px;
     }
     100% {
         transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-marquee {
+        margin: 80px 0px;
+        padding: 30px 0;
+    }
+
+    .product-marquee h2 {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .product-item {
+        width: 160px;
+        margin: 0 12px;
+    }
+
+    .product-item img {
+        height: 140px;
     }
 }
 
@@ -896,6 +1013,54 @@ border-radius: 20px;
 }
 }
 
+@media (max-width: 768px) {
+    .world-map-section {
+        padding: 5px 20px 60px;
+        min-height: auto;
+    }
+
+    .world-map-section h2 {
+        font-size: 30px;
+    }
+
+    /* the desktop rule used huge horizontal margins to center the
+       text against the map column — collapse that on mobile */
+    .world-map-section p {
+        margin: 20px 0;
+        font-size: 15px;
+    }
+
+    .map-container {
+        height: 280px;
+    }
+
+    .locations-panel {
+        padding: 10px;
+        gap: 16px;
+    }
+
+    /* the desktop rule used huge horizontal padding as a centering
+       hack — replace with normal padding on mobile */
+    .location-card {
+        padding: 12px 16px;
+        background: #fff;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+    }
+
+    .location-description p {
+        text-align: left;
+    }
+
+    .map-pin {
+        font-size: 20px;
+    }
+
+    .tooltip {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+}
+
 /* ///////     CONTACT SECTION     /////// */
 .contact-section {
     padding: 80px 0px;
@@ -1030,12 +1195,49 @@ border-radius: 20px;
 @media (max-width: 900px) {
     .contact-container {
         grid-template-columns: 1fr;
+        margin: 0px 20px;
     }
 
     .contact-form .row {
         flex-direction: column;
     }
 
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 50px 0px;
+        margin-bottom: 40px;
+    }
+
+    .contact-header h2 {
+        font-size: 30px;
+    }
+
+    .contact-header p {
+        font-size: 15px;
+        margin-bottom: 40px;
+        padding: 0 20px;
+    }
+
+    .contact-container {
+        margin: 0px 16px;
+        padding: 16px;
+    }
+
+    .contact-info {
+        min-height: 260px;
+    }
+
+    .contact-form .row {
+        gap: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-container {
+        margin: 0px 10px;
+    }
 }
 
 
@@ -1166,6 +1368,30 @@ border-radius: 20px;
       grid-template-columns: repeat(2, 1fr);
     }
   }
+
+  @media (max-width: 768px) {
+    .process-section {
+        margin-top: 70px;
+        padding: 0 20px;
+    }
+
+    .process-header h2 {
+        font-size: 30px;
+    }
+
+    .process-header p {
+        font-size: 14px;
+        margin-bottom: 36px;
+    }
+
+    .process-card img {
+        height: 90px;
+    }
+
+    .process-card .divider {
+        width: 120px;
+    }
+  }
   
   @media (max-width: 600px) {
     .process-cards {
@@ -1259,6 +1485,8 @@ border-radius: 20px;
     font-size: 22px;
     font-weight: 300;
     color: #aa8e31;
+    flex-shrink: 0;
+    margin-left: 12px;
   }
   
   /* ANSWER */
@@ -1277,23 +1505,42 @@ border-radius: 20px;
   
   /* ACTIVE OPEN */
   .faq-item.active .faq-answer {
-    max-height: 200px;
+    max-height: 320px;
   }
   
   /* RESPONSIVE */
   /* RESPONSIVE */
 @media (max-width: 768px) {
+    .faq-wrapper {
+        margin-top: 70px;
+    }
+
     .faq-box {
       grid-template-columns: 1fr;
-      padding: 40px;
+      padding: 32px 20px;
+      border-radius: 20px;
     }
   
     .faq-right {
-      padding: 30px;
+      padding: 20px;
     }
   
     .faq-left h2 {
-      font-size: 36px;
+      font-size: 32px;
+    }
+
+    .faq-left p {
+        max-width: 100%;
+        margin-bottom: 24px;
+    }
+
+    .faq-question {
+        font-size: 14px;
+        padding: 18px 0;
+    }
+
+    .faq-item.active .faq-answer {
+        max-height: 400px;
     }
   }
 
@@ -1485,21 +1732,57 @@ border-radius: 20px;
 
 @media (max-width: 768px) {
 
+    /* The desktop footer relies on absolute-positioned hero/sides/bottom
+       stacked over a fixed-height background image, which collides on
+       narrow screens. Switch it to a normal stacked flow on mobile. */
+    .footer-wrapper {
+        min-height: auto;
+        padding: 60px 20px 24px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-hero {
+        position: static;
+        transform: none;
+        max-width: 100%;
+        padding: 0;
+        margin-bottom: 60px;
+    }
+
     .footer-bottom {
+        position: static;
+        width: 100%;
+        left: 0;
         flex-direction: column;
         gap: 10px;
         text-align: center;
+        padding: 20px 0 0;
         font-family: 'Source Sans Pro', sans-serif;
     }
 
     .footer-hero h2 {
-        font-size: 42px;
+        font-size: 34px;
+    }
+
+    .footer-hero p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 0;
     }
 
     .footer-sides {
+        position: static;
         flex-direction: column;
-        gap: 30px;
+        gap: 26px;
         text-align: center;
+        padding: 0;
+        margin-bottom: 40px;
+    }
+
+    .brand-wrap {
+        flex-direction: column;
+        gap: 6px;
     }
 
     .footer-divider {
@@ -1509,6 +1792,8 @@ border-radius: 20px;
 
     .footer-right {
         flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 18px;
     }
 
@@ -1676,30 +1961,57 @@ border-radius: 20px;
     .timeline-wrapper {
       padding: 40px 0;
     }
-    
-    .timeline-item {
-      width: 140px;
-      padding: 12px 10px;
-    }
 
     .timeline-header {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
         padding: 0 20px;
       }
     
       .timeline-header h2 {
-        font-size: 32px;
+        font-size: 28px;
       }
     
       .timeline-header p {
         font-size: 14px;
       }
-      
-    .timeline-item h3 { font-size: 12px; }
-    .timeline-item h4 { font-size: 11px; }
-    .timeline-item p { font-size: 9px; }
-    .timeline-divider { margin: 8px 0; }
-    
+
+    /* Absolute-positioned boxes over a shrinking image overlap and
+       run off-screen at narrow widths — drop the image overlay and
+       render the stages as a plain stacked list instead. */
+    .timeline-image {
+        display: none;
+    }
+
+    .timeline-stage {
+        padding: 0 20px;
+    }
+
+    .timeline-overlay {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        pointer-events: auto;
+    }
+
+    .timeline-item {
+        position: static;
+        width: 100%;
+        transform: none;
+        background: #fff;
+        border-radius: 14px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        padding: 18px 20px;
+    }
+
+    .timeline-item h3 { font-size: 13px; letter-spacing: 1px; color: #aa8e31; }
+    .timeline-item h4 { font-size: 16px; }
+    .timeline-item p { font-size: 14px; }
+    .timeline-divider { margin: 10px 0; }
   }
 
-
+  @media (max-width: 480px) {
+    .timeline-header h2 {
+        font-size: 24px;
+    }
+  }
