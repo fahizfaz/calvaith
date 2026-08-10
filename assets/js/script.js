@@ -12,34 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const track = document.getElementById("sliderTrack");
-    const totalItems = 5;
-    let index = 0;
-
-    function getVisibleItems() {
-    if (window.innerWidth <= 600) return 1;
-    if (window.innerWidth <= 900) return 2;
-    return 3;
-    }
-
-    function slide() {
-    const visible = getVisibleItems();
-    const maxIndex = totalItems - visible;
-
-    index++;
-    if (index > maxIndex) index = 0;
-
-    const translateX = -(index * (100 / visible));
-    track.style.transform = `translateX(${translateX}%)`;
-    }
-
-    setInterval(slide, 3000);
-    window.addEventListener("resize", () => (index = 0));
-
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-
     const isMobile = 'ontouchstart' in window || window.innerWidth < 768;
 
     if (!isMobile) {
